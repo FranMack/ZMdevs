@@ -1,0 +1,72 @@
+@import "../variables";
+
+.navbar-container {
+  position: fixed;
+  width: 100vw;
+  height: 15vh;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: $cfDev_primaryFont;
+  font-size: 2rem;
+  font-weight: 400;
+  color: $cfDev_textPrimaryColor;
+  z-index: 50;
+  background-color: rgba($color: #000000, $alpha: 0.2);
+}
+
+.navbar-menu {
+  width: 50%;
+  margin-right: 2%;
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.navbar-logo {
+  width: 15%;
+  height: 55%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+li:hover {
+  color: $cfDev_primaryColor;
+}
+
+.navbar-move {
+  height: 15vh;
+  opacity: 0.9;
+  background-color: $backgroun_color1;
+}
+
+.navbar-logo-move {
+  width: 15%;
+  height: 55%;
+}
+
+
+.flag-container{
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flag{
+  height: 100%;
+  display: flex;
+  aspect-ratio: 1;
+  svg{
+    border-radius: 50%;
+  }
+
+}

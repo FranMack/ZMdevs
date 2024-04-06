@@ -1,0 +1,63 @@
+@import "../variables";
+.projects-container {
+  min-width: 100vw;
+  background-color: $backgroun_color1;
+  color: $cfDev_textPrimaryColor;
+  font-family: $cfDev_primaryFont;
+  padding-top: 15vh;
+  h3{
+    font-family: $cfDev_primaryFont;
+    font-size: 2.8rem;
+    font-weight:400;
+    color: $cfDev_textPrimaryColor;
+    margin-left: 2%;
+}
+
+  ::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 5px; /* Radio de borde del dedo de la barra de desplazamiento */
+  }
+}
+
+.horizontal-scroll-container {
+  position: relative;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.projects-center-container {
+  width: 90%;
+  display: flex;
+  flex-wrap: nowrap;
+  column-gap: 2%;
+  margin-top: 2%;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+.arrows-left {
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  svg {
+    height: 80px;
+    width: 80px;
+  }
+}
+
+.arrows-right {
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  top: 40%;
+  right: 0;
+  svg {
+    height: 80px;
+    width: 80px;
+  }
+}

@@ -1,0 +1,100 @@
+@import "./views/header";
+@import "./views/header2";
+@import "./variables";
+@import "./components//navbar";
+@import "./views//aboutUs";
+@import "./components/footer";
+@import "./views/services";
+@import "./views/contact";
+@import"./components/servicesCard";
+@import"./components/projectCard";
+@import"./views/projects";
+@import"./components//carrusel";
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: auto;
+
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    overflow-x: hidden;
+    font-family: $cfDev_primaryFont;
+}
+
+
+::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de desplazamiento */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: $cfDev_primaryColor;
+    border-radius: 5px; /* Radio de borde del dedo de la barra de desplazamiento */
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color:$backgroun_color1; /* Color de fondo de la pista de la barra de desplazamiento */
+    
+  }
+
+  ::-webkit-scrollbar-corner {
+    background-color: red;
+    width: 20px;
+    height: 20px;
+  }
+
+
+  //ANIMACIONES
+
+.efectoReveal {
+  animation-name: efectoReveal;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes efectoReveal {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+
+.efectoReveal2 {
+  animation-name: efectoReveal;
+  animation-delay: 0.3s;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+
+.efectoRevealOut {
+  animation-name: efectoRevealOut;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+@keyframes efectoRevealOut {
+  from {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
+  

@@ -1,0 +1,126 @@
+@import "../variables";
+
+.header-container{
+
+  position: relative; /* Establece el contexto de posicionamiento */
+    width: 100vw;
+    min-height:100vh ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $backgroun_color1;
+    overflow: hidden; /* Para asegurarse de que el video no se desborde */
+
+    h3{
+        font-family: $cfDev_primaryFont;
+        font-style:oblique;
+        font-size: 3.5rem;
+        font-weight:400;
+        color: $cfDev_textPrimaryColor;
+    }
+   
+}
+
+
+.header-center-container{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%); /* Centra el elemento horizontal y verticalmente */
+  z-index: 1; /* Asegura que el logo esté por encima del video */
+  width: 50%;
+  height: 30%;
+}
+
+
+.header-logo-container{
+
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 24vh;
+   
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    object-fit:cover
+}
+
+
+video{
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  object-fit:cover;
+  z-index: 0; /* Asegura que el video esté detrás del contenido */
+  opacity: 0.7;
+}
+
+
+ .sombraLogo {
+    filter: drop-shadow(4px 8px 50px $cfDev_textPrimaryColor);
+  }
+
+
+
+
+//ANIMACIONES
+.textMotion {
+    text-align: center;
+    font-weight: 400;
+    display: block;
+    white-space: nowrap;
+    border-right: 4px solid transparent;
+    animation: typing 1.5s steps(25) 2s, blink 0.5s infinite step-end alternate 2s,
+      backgroundEfect 20s 3s infinite linear;
+    overflow: hidden;
+    animation-fill-mode: both;
+    color: transparent;
+    background-color: $cfDev_primaryFont;
+    -webkit-text-stroke: 1px $cfDev_primaryFont;
+    -webkit-background-clip: text;
+  
+    background-position: 0 0;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 25ch;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: $cfDev_primaryFont;
+    }
+  }
+
+
+  .logoReveal {
+    animation-name: logoReveal;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: both;
+  }
+
+
+  @keyframes logoReveal {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+
+ 

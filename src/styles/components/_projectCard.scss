@@ -1,0 +1,56 @@
+@import "../variables";
+.project-card{
+    height: 60vh;
+    width: 20vw;
+    background-color:$backgroun_color1;
+    border:solid 4px;
+    border-color: $cfDev_primaryColor;
+    color: $cfDev_textPrimaryColor;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 3%;
+    font-weight: 400;
+    flex-shrink: 0;
+    transform: translate(-600%);
+    transition: 3s ease;
+    
+    opacity: 0;
+
+    h2{
+        font-size: 2.2rem;
+        font-weight: 600;
+
+    }
+
+    p{
+        font-size: 1.5rem;
+        text-align: center;
+        margin-left: 5%;
+        margin-right: 5%;
+      
+
+    }
+}
+
+.project-icon-container{
+    width: 35%;
+    aspect-ratio: 1;
+    margin-top: 5%;
+}
+
+
+//animations
+
+
+.revealProjectCard {
+    transform: translate(0%);
+    opacity: 1;
+    
+  }
+  
+
+  
+
+    
