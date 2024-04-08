@@ -121,3 +121,25 @@ height: 6%;
       text-transform:uppercase;
   }
 }
+
+//animation
+
+.carruselReveal {
+  animation-name: carruselReveal;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
+@keyframes carruselReveal {
+  from {
+ 
+    transform: translateX(-30%) ;
+    opacity: 0;
+  }
+  to {
+  
+    transform: translateX(0%) ;
+    opacity: 1;
+  }
+}

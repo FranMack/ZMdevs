@@ -2,7 +2,7 @@ import { useEffect, useState,useRef } from "react";
 import { infoCarrusel } from "../assets/carrusel/info.carrusel";
 import { circleArrows } from "../assets/social_media/icons";
 
-function Carrusel() {
+function Carrusel({refHeader}) {
 
 
   const listRef = useRef();
@@ -32,7 +32,7 @@ function Carrusel() {
     
 
 
-    if (imgNode && scrollPosition>1 ) {
+    if (imgNode && scrollPosition<carruselBottonPosition ) {
       imgNode.scrollIntoView({
         behavior: "smooth",
         block: "nearest",
@@ -64,8 +64,8 @@ function Carrusel() {
 
     const carrusel=document.querySelector(".carrusel-slider")
     const carruselTopPosition=carrusel.scrollHeight
-    console.dir(carrusel)
-    const carruselBottonPosition=carrusel.scrollHeight+carrusel.clientHeight*0.5
+  
+    const carruselBottonPosition=carrusel.scrollHeight
     setcarruselTopPosition(carruselTopPosition);
     setcarruselBottonPosition(carruselBottonPosition)
 
@@ -76,7 +76,7 @@ function Carrusel() {
       const finalSlide = infoCarrusel.length - 1;
 
       
-      if (scrollPosition>carruselTopPosition && scrollPosition<carruselBottonPosition){
+      if ( scrollPosition<carruselBottonPosition){
       setCurrentIndex(curr => {
         if (curr < finalSlide) {
           return curr + 1;
@@ -91,19 +91,17 @@ function Carrusel() {
   
     // Devuelve una función de limpieza para limpiar el intervalo cuando el componente se desmonte o cuando el estado cambie
     return () => clearInterval(intervalId);
-  }, [scrollPosition]);
+  }, []);
 
 
 
 
-  console.log("top",carruselTopPosition)
-  console.log("scroll",scrollPosition)
-  console.log("bottom",carruselBottonPosition)
+
 
 
 
   return (
-    <section className="seccion-carrusel">
+    <section ref={refHeader} className="seccion-carrusel carruselReveal">
 
       <div className="arrows-left-container" onClick={() => scrollToImage('prev')}>{circleArrows.left}</div>
       <div className="arrows-right-container" onClick={() => scrollToImage('next')}>{circleArrows.right}</div>

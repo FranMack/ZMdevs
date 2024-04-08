@@ -3,9 +3,9 @@ import videoFondo from "../assets/videoFondo.mp4"
 import imagenFondo from"../assets/carrusel/desk1.jpg"
 import Carrusel from "../components/Carrusel"
 
-function Header2({refHeader}){
+function Header2(){
     return(<>
-    <div ref={refHeader} className="header2-container">
+    <div  className="header2-container headerOut">
        
 
     

@@ -3,7 +3,7 @@ import videoFondo from "../assets/videoFondo.mp4"
 
 function Header(){
     return(<>
-    <div className="header-container">
+    <div className="header-container headerOut">
 
     <video className="logoReveal" autoPlay muted loop>
         <source src={videoFondo} type="video/mp4" />

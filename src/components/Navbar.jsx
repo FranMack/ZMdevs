@@ -1,4 +1,5 @@
-import logo from "../assets/images/l3.png";
+import logoColor from "../assets/images/l5.png";
+import logoBlanco from "../assets/images/l2.png";
 import { useState } from "react";
 import {SpainFlag, UKflag} from "../assets/svg/flags"
 function Navbar({scrollHandler,itemsNavbar}) {
@@ -14,10 +15,10 @@ function Navbar({scrollHandler,itemsNavbar}) {
 
   return (
     <nav
-      className={`navbar-container ${scrollPosition > 100 && `navbar-move`} `}
+      className={`navbar-container navbarReveal ${scrollPosition > 100 && `navbar-move`} `}
     >
       <div className={` ${scrollPosition > 100 ? `navbar-logo-move`:`navbar-logo`}`}>
-        <img src={logo} alt="CFdev" />
+        <img src={`${scrollPosition > 100 ? logoColor :logoBlanco}`} alt="CFdev" />
       </div>
 
       <div className="navbar-menu">

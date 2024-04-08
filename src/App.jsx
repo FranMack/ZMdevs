@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Header from "./views/Header";
 import Navbar from "./components/Navbar";
 import AboutUs from "./views/AboutUs";
@@ -12,6 +12,20 @@ import { useNavigate } from "react-router-dom";
 
 function App() {
   const navigate = useNavigate();
+
+  const [carruselOn,setCarusselOn]=useState(false)
+
+
+  useEffect(()=>{
+   
+    setTimeout(()=>{
+      setCarusselOn(true)
+     
+    },6000)
+
+    
+
+  },[])
 
   
   
@@ -127,10 +141,11 @@ function App() {
 
   return (
     <>
-      <Navbar scrollHandler={scrollHandler} itemsNavbar={itemsNavbar} />
+      {carruselOn && <Navbar scrollHandler={scrollHandler} itemsNavbar={itemsNavbar} />}
       <main>
-        <Header2 refHeader={refHeader} />
-        <Carrusel />
+        {carruselOn ?  (<Carrusel refHeader={refHeader} />):(<Header2 />)}
+  
+        
         <AboutUs refAboutUs={refAboutUs} />
         <Services refServices={refServices} />
         <Projects refProjects={refProjects} />
