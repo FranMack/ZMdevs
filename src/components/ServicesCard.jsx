@@ -1,4 +1,4 @@
-import { landing,apiRest,mobile } from "../assets/our_services/iconsSVG";
+
 
 
 
@@ -6,6 +6,7 @@ function ServicesCard({title,description,image}){
 
     return(<>
     <div className="service-card efectoRevealOut">
+        
     <div className="service-icon-container">
             {image}
         </div>

@@ -15,7 +15,7 @@ function Header2(){
        </div>
 <h3 className="textMotion">TURNING IDEAS INTO CODE</h3>
 </div>
-<img className="header2-fondo" src={imagenFondo} alt="imagen-header" />
+{/*<img className="header2-fondo" src={imagenFondo} alt="imagen-header" />*/}
 
        
     </div>

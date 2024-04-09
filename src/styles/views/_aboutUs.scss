@@ -1,15 +1,16 @@
 .aboutUs-container{
     width: 100vw;
-    background-color: $backgroun_color1;
-    color:$cfDev_textPrimaryColor;
+    background-color: $backgroun_color4;
+    color:$cfDev_textTerciaryColor;
     padding-top: 15vh;
     padding-bottom:2% ;
 
     h3{
         font-family: $cfDev_primaryFont;
+        color:$cfDev_textSecundaryColor;
         font-size: 2.8rem;
         font-weight:400;
-        color: $cfDev_textPrimaryColor;
+        color: $cfDev_textTerciaryColor;
     }
 }
 
@@ -42,6 +43,7 @@
     }
     p{
         font-family: $cfDev_primaryFont;
+        color:$cfDev_textSecundaryColor;
         font-size: 1.7rem;
         margin-left: 10%;
         margin-right: 10%;
@@ -52,11 +54,10 @@
 .aboutUs-profile{
     width: 40%;
     aspect-ratio: 1;
-    background-color:$cfDev_textPrimaryColor;
+    background:$backgroun_color2;
     border-radius: 50%;
     overflow: hidden;
-    border: 8px solid;
-    border-color: $cfDev_secundaryColor;
+    
 
     img{
         height: 100%;

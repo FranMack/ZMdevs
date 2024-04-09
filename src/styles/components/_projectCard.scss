@@ -2,10 +2,10 @@
 .project-card{
     height: 60vh;
     width: 20vw;
-    background-color:$backgroun_color1;
+    background-color:$backgroun_color3;
     border:solid 4px;
     border-color: $cfDev_primaryColor;
-    color: $cfDev_textPrimaryColor;
+    color: $cfDev_textSecundaryColor;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -37,7 +37,14 @@
 .project-icon-container{
     width: 35%;
     aspect-ratio: 1;
-    margin-top: 5%;
+    margin-top: 5%; 
+    svg{
+        fill:$cfDev_primaryColor;
+        stroke: $cfDev_primaryColor;
+        stroke-width: 1;
+
+    }
+
 }
 
 

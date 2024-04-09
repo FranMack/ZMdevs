@@ -2,9 +2,9 @@
 .service-card{
     height: 60vh;
     width: 20vw;
-    background: rgb(1,242,127);
-    background: linear-gradient(90deg, rgba(1,242,127,1) 0%, rgba(12,103,84,1) 72%, rgba(15,68,63,1) 100%);
-    color: $backgroun_color1;
+    background: rgb(9,13,14);
+    background: linear-gradient(315deg, rgba(9,13,14,1) 35%, rgba(28,37,40,1) 77%);
+    color: $cfDev_textTerciaryColor;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -15,6 +15,7 @@
    
 
     h2{
+        color: $cfDev_primaryColor;
         font-size: 2.2rem;
         font-weight: 600;
 
@@ -23,14 +24,23 @@
     p{
         font-size: 1.5rem;
         text-align: center;
+        margin-left: 5%;
+        margin-right: 5%;
       
 
     }
 }
 
+
 .service-icon-container{
-    width: 35%;
+    width: 30%;
     aspect-ratio: 1;
     margin-top: 5%;
+    svg{
+        fill:$cfDev_primaryColor;
+        stroke: $cfDev_primaryColor;
+        stroke-width: 1;
+
+    }
 }
 
