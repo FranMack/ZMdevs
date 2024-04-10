@@ -1,34 +1,24 @@
 import { useEffect, useRef, useState } from "react";
-import Header from "./views/Header";
+import { useNavigate } from "react-router-dom";
+import Carrusel from "./components/Carrusel";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import AboutUs from "./views/AboutUs";
-import Footer from "./components/Footer";
-import Services from "./views/Services";
 import Contact from "./views/Contact";
-import Projects from "./views/Projects";
-import Carrusel from "./components/Carrusel";
 import Header2 from "./views/Header2";
-import { useNavigate } from "react-router-dom";
+import Projects from "./views/Projects";
+import Services from "./views/Services";
 
 function App() {
   const navigate = useNavigate();
 
-  const [carruselOn,setCarusselOn]=useState(false)
+  const [carruselOn, setCarusselOn] = useState(false);
 
-
-  useEffect(()=>{
-   
-    setTimeout(()=>{
-      setCarusselOn(true)
-     
-    },6000)
-
-    
-
-  },[])
-
-  
-  
+  useEffect(() => {
+    setTimeout(() => {
+      setCarusselOn(true);
+    }, 6000);
+  }, []);
 
   //referencias
   const refHeader = useRef();
@@ -64,10 +54,10 @@ function App() {
     );
     const servicesCards = refServices.current.querySelectorAll(".service-card");
     const projectsCards = refProjects.current.querySelectorAll(".project-card");
-    const socialMedia=refContact.current.querySelector(".contact-social-media")
-    const contactForm=refContact.current.querySelector(".contact-form")
-
-
+    const socialMedia = refContact.current.querySelector(
+      ".contact-social-media"
+    );
+    const contactForm = refContact.current.querySelector(".contact-form");
 
     if (aboutUsInfo) {
       const topCoordinates = aboutUsInfo.getBoundingClientRect().top;
@@ -109,7 +99,6 @@ function App() {
       }
     });
 
-
     if (socialMedia) {
       const topCoordinates = socialMedia.getBoundingClientRect().top;
 
@@ -133,19 +122,16 @@ function App() {
         contactForm.classList.remove("efectoReveal");
       }
     }
-
-
-
-
   }
 
   return (
     <>
-      {carruselOn && <Navbar scrollHandler={scrollHandler} itemsNavbar={itemsNavbar} />}
+      {carruselOn && (
+        <Navbar scrollHandler={scrollHandler} itemsNavbar={itemsNavbar} />
+      )}
       <main>
-        {carruselOn ?  (<Carrusel refHeader={refHeader} />):(<Header2 />)}
-  
-        
+        {carruselOn ? <Carrusel refHeader={refHeader} /> : <Header2 />}
+
         <AboutUs refAboutUs={refAboutUs} />
         <Services refServices={refServices} />
         <Projects refProjects={refProjects} />

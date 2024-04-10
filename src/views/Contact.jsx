@@ -1,7 +1,7 @@
-import { socialMedia } from "../assets/social_media/icons";
+import axios from "axios";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import axios from "axios";
+import { socialMedia } from "../assets/social_media/icons";
 
 function Contact({ refContact }) {
   const singUpForm = useFormik({
@@ -48,21 +48,21 @@ function Contact({ refContact }) {
     <section ref={refContact} className="contact-container">
       <h3 className="section-title-contact">CONTACT</h3>
 
-      <div className="contact-center-contain">
+      <div className="contact-center-contain" style={{ color: "#E0E1E3" }}>
         <div className="contact-internal-contain">
           <article className="contact-social-media">
-            <h4>LET'S WORK TOGHETER</h4>
+            <h4 style={{ color: "white" }}>LET'S WORK TOGHETER</h4>
             <p>
               Do you have an idea for a software project? We'd love to hear it!
               Tell us the details and we will work together to make it a
               reality.
             </p>
             <div className="social-media-icons">
-              {socialMedia.map((media) => {
+              {socialMedia.map((media, i) => {
                 return (
-                  <div className="social-media-icon-file">
+                  <div key={i} className="social-media-icon-file">
                     {media.icon}
-                    <p>{media.text}</p>
+                    <p style={{ color: "#E0E1E3" }}>{media.text}</p>
                   </div>
                 );
               })}

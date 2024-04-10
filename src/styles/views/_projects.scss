@@ -1,17 +1,17 @@
 @import "../variables";
 .projects-container {
   min-width: 100vw;
-  background-color: $backgroun_color4;
+  background-color: $backgroun_color5;
   color: $cfDev_textPrimaryColor;
   font-family: $cfDev_primaryFont;
   padding-top: 15vh;
-  h3{
+  h3 {
     font-family: $cfDev_primaryFont;
     font-size: 2.8rem;
-    font-weight:400;
+    font-weight: 400;
     color: $cfDev_textTerciaryColor;
     margin-left: 2%;
-}
+  }
 
   ::-webkit-scrollbar-thumb {
     background-color: transparent;
@@ -25,8 +25,6 @@
   display: flex;
   justify-content: center;
 }
-
-
 
 .projects-center-container {
   width: 90%;
