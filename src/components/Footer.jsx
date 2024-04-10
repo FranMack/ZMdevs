@@ -1,5 +1,5 @@
 import { socialMedia } from "../assets/social_media/icons";
-import logo from "../assets/images/l1.png";
+import logo from "../assets/images/logo1.png";
 
 function Footer(){
 

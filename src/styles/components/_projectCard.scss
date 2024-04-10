@@ -5,7 +5,7 @@
     background-color:$backgroun_color3;
     border:solid 4px;
     border-color: $cfDev_primaryColor;
-    color: $cfDev_textSecundaryColor;
+    
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -21,6 +21,7 @@
     h2{
         font-size: 2.2rem;
         font-weight: 600;
+        color: $cfDev_primaryColor;
 
     }
 
@@ -29,6 +30,7 @@
         text-align: center;
         margin-left: 5%;
         margin-right: 5%;
+        color: $cfDev_textTerciaryColor
       
 
     }

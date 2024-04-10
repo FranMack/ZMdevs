@@ -3,14 +3,14 @@
 .footer{
     width: 100vw;
     height: 30vh;
-    background: rgb(1,242,127);
-    background: linear-gradient(90deg, rgba(1,242,127,1) 0%, rgba(12,103,84,1) 72%, rgba(15,68,63,1) 100%);
+    background: rgb(9,13,14);
+    background: linear-gradient(315deg, rgba(9,13,14,1) 35%, rgba(28,37,40,1) 77%);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     font-size: 1.6rem;
     font-family: $cfDev_primaryFont;
-    color:$cfDev_tertiaryColor;
+    color:$cfDev_textPrimaryColor;
     
 
   
