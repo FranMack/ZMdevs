@@ -1,5 +1,6 @@
 import { AiOutlineMail } from "react-icons/ai";
-import { FaLinkedinIn,FaInstagram,FaWhatsapp } from "react-icons/fa";
+import { BsXLg } from "react-icons/bs";
+import { FaLinkedinIn,FaInstagram,FaWhatsapp,FaBars } from "react-icons/fa";
 import { IoIosArrowBack,IoIosArrowForward,IoMdArrowDropleftCircle,IoMdArrowDroprightCircle  } from "react-icons/io";
 
 
@@ -31,3 +32,11 @@ export const circleArrows={
     left:circleArrowsLeft,
     right:circleArrowsRight
 } 
+
+
+export const HamburguerMenu=({handleShowMobileMenu})=>{
+return(<FaBars onClick={handleShowMobileMenu} style={{marginRight:"5%"}}/>)}
+
+export const ExitIcon=({handleShowMobileMenu})=>{
+    return(<BsXLg onClick={handleShowMobileMenu} style={{marginLeft:"5%"}}/>)}
+

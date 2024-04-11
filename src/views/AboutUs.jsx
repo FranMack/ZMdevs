@@ -5,7 +5,7 @@ function AboutUs({refAboutUs}){
     return(<>
     <section ref={refAboutUs} className="aboutUs-container">
 
-        <h3 className="section-title">ABOUT US</h3>
+        <h3 className="section-title">NOSOTROS</h3>
         
         <div  className="aboutUs-center-container efectoRevealOut">
         <article  className="aboutUs-article ">

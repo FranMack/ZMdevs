@@ -1,6 +1,6 @@
 import { useEffect, useState,useRef } from "react";
 import { infoCarrusel } from "../assets/carrusel/info.carrusel";
-import { circleArrows } from "../assets/social_media/icons";
+import { circleArrows } from "../assets/icons/icons";
 
 function Carrusel({refHeader}) {
 
@@ -32,7 +32,7 @@ function Carrusel({refHeader}) {
     
 
 
-    if (imgNode && scrollPosition<carruselBottonPosition ) {
+    if (imgNode && scrollPosition<carruselBottonPosition && scrollPosition>carruselTopPosition ) {
       imgNode.scrollIntoView({
         behavior: "smooth",
         block: "nearest",
@@ -65,7 +65,7 @@ function Carrusel({refHeader}) {
     const carrusel=document.querySelector(".carrusel-slider")
     const carruselTopPosition=carrusel.scrollHeight
   
-    const carruselBottonPosition=carrusel.scrollHeight
+    const carruselBottonPosition=carrusel.scrollHeight+carrusel.clientHeight
     setcarruselTopPosition(carruselTopPosition);
     setcarruselBottonPosition(carruselBottonPosition)
 
@@ -76,7 +76,7 @@ function Carrusel({refHeader}) {
       const finalSlide = infoCarrusel.length - 1;
 
       
-      if ( scrollPosition<carruselBottonPosition){
+      if ( scrollPosition<carruselBottonPosition && scrollPosition>carruselTopPosition ){
       setCurrentIndex(curr => {
         if (curr < finalSlide) {
           return curr + 1;
@@ -101,7 +101,7 @@ function Carrusel({refHeader}) {
 
 
   return (
-    <section ref={refHeader} className="seccion-carrusel carruselReveal">
+    <section className="seccion-carrusel carruselReveal">
 
       <div className="arrows-left-container" onClick={() => scrollToImage('prev')}>{circleArrows.left}</div>
       <div className="arrows-right-container" onClick={() => scrollToImage('next')}>{circleArrows.right}</div>

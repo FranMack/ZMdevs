@@ -2,13 +2,11 @@
 
 .contact-container {
   padding-top: 15vh;
-  min-height: 100vh;
   width: 100vw;
   background-color: $backgroun_color1;
   font-family: $cfDev_primaryFont;
-  color: $cfDev_textPrimaryColor;
+  color: $cfDev_textTerciaryColor;
   h3 {
-    font-family: $cfDev_primaryFont;
     font-size: 2.8rem;
     font-weight: 400;
     font-family: $cfDev_primaryFont;
@@ -27,10 +25,11 @@
   margin-left: 2%;
 }
 
-.contact-center-contain {
-  width: 100%;
-  height: 90vh;
+.contact-center-container {
+  margin: 0 auto;
+  width: 90%;
   display: flex;
+  align-items: center;
 }
 
 .contact-internal-contain {
@@ -46,8 +45,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  width: 75%;
-  height: 90%;
+  width: 65%;
+  height: 72vh;
 
   font-size: 1.8rem;
   font-weight: 500;
@@ -56,11 +55,13 @@
     width: 100%;
     height: 9%;
     border-radius: 15px;
+    color: black;
   }
 
   .input-warning {
-    border: solid 4px;
+    border: solid 2px;
     border-color: $cfDev_primaryColor;
+    
   }
 
   textarea {
@@ -84,10 +85,11 @@
 .form-warning {
   font-size: 1.4rem;
   margin-bottom: 1%;
+  color: $cfDev_primaryColor;
 }
 
 .contact-social-media {
-  width: 70%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -95,11 +97,12 @@
   h4 {
     font-size: 3rem;
     font-weight: 600;
-    color: $cfDev_textPrimaryColor;
+    color: $cfDev_textTerciaryColor;
   }
 
   p {
     font-size: 1.7rem;
+    color: $cfDev_textTerciaryColor;
   }
 
   .social-media-icons {
@@ -125,4 +128,59 @@
   svg:hover {
     color: $cfDev_primaryColor;
   }
+}
+
+
+@media screen and (max-width:678px) {
+  .contact-center-container {
+    padding-top: 4%;
+  }
+
+  .contact-container {
+     h3{
+    font-size: 4rem;
+    text-align: center;
+}}
+
+  .contact-center-container {
+  flex-direction: column;
+  width: 100%;
+  }
+  .contact-internal-contain {
+    width: 100%;
+  
+}
+
+.contact-social-media {
+  align-items: center;
+  width: 85%;
+  h4{
+    font-size: 2.5rem;
+    
+  }
+  p {
+    font-size: 1.7rem;
+    color: $cfDev_textTerciaryColor;
+    text-align: center;
+  }
+
+  .social-media-icons {
+    width: 80%;
+  
+    font-size: 2.5rem;
+  }
+
+  
+}
+
+
+
+.contact-form {
+  width: 80%;
+  height: 80vh;
+}
+
+
+
+
 }

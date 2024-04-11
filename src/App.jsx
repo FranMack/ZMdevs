@@ -6,25 +6,21 @@ import Navbar from "./components/Navbar";
 import AboutUs from "./views/AboutUs";
 import Contact from "./views/Contact";
 import Header2 from "./views/Header2";
-import Projects from "./views/Projects";
 import Services from "./views/Services";
+import Clients from "./views/Clients";
+import MobileNavbar from "./components/MobileNavbar";
+import MobileMenu from "./components/MobileMenu";
 
 function App() {
   const navigate = useNavigate();
 
-  const [carruselOn, setCarusselOn] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setCarusselOn(true);
-    }, 6000);
-  }, []);
+  
 
   //referencias
   const refHeader = useRef();
   const refAboutUs = useRef();
   const refServices = useRef();
-  const refProjects = useRef();
+  const refClients = useRef();
   const refContact = useRef();
 
   const scrollHandler = (elemRef) => {
@@ -39,10 +35,10 @@ function App() {
 
   const itemsNavbar = [
     { name: "Home", ref: refHeader },
-    { name: "About us", ref: refAboutUs },
-    { name: "Services", ref: refServices },
-    { name: "Projects", ref: refProjects },
-    { name: "Contact us", ref: refContact },
+    { name: "Nosotros", ref: refAboutUs },
+    { name: "Servicios", ref: refServices },
+    { name: "Clientes", ref: refClients },
+    { name: "Contacto", ref: refContact },
   ];
 
   window.addEventListener("scroll", scrollHandler2);
@@ -53,7 +49,7 @@ function App() {
       ".aboutUs-center-container"
     );
     const servicesCards = refServices.current.querySelectorAll(".service-card");
-    const projectsCards = refProjects.current.querySelectorAll(".project-card");
+    /*const projectsCards = refProjects.current.querySelectorAll(".project-card");*/
     const socialMedia = refContact.current.querySelector(
       ".contact-social-media"
     );
@@ -89,13 +85,19 @@ function App() {
       }
     });
 
-    projectsCards.forEach((card, i) => {
+    const clientsCards = refClients.current.querySelectorAll(
+      ".client-card"
+    );
+
+    clientsCards.forEach((card, i) => {
       const cardTop = card.getBoundingClientRect().top;
 
       if (cardTop < triggerBottom) {
-        card.classList.add("revealProjectCard");
+        card.classList.add("efectoReveal");
+        card.classList.remove("efectoRevealOut");
       } else {
-        card.classList.remove("revealProjectCard");
+        card.classList.remove("efectoReveal");
+        card.classList.add("efectoRevealOut");
       }
     });
 
@@ -124,17 +126,34 @@ function App() {
     }
   }
 
+  const [windowSize,setWindowSize]=useState(window.innerWidth);
+
+  
+  const handleWindowSize=()=>{
+    setWindowSize(window.innerWidth)
+  
+}
+window.addEventListener("resize",handleWindowSize)
+
+
+const [showMobileMenu,setShowMobileMenu]=useState(false)
+
+const handleShowMobileMenu=()=>{
+  setShowMobileMenu(!showMobileMenu)
+}
+  
+
   return (
     <>
-      {carruselOn && (
-        <Navbar scrollHandler={scrollHandler} itemsNavbar={itemsNavbar} />
-      )}
+     
+     {windowSize>768? (<Navbar scrollHandler={scrollHandler} itemsNavbar={itemsNavbar} />) :(<MobileNavbar handleShowMobileMenu={handleShowMobileMenu} />)}
+    {showMobileMenu && <MobileMenu scrollHandler={scrollHandler} itemsNavbar={itemsNavbar} handleShowMobileMenu={handleShowMobileMenu}/>}
       <main>
-        {carruselOn ? <Carrusel refHeader={refHeader} /> : <Header2 />}
-
+        <Header2 windowSize={windowSize} refHeader={refHeader} />
+        <Carrusel/>
         <AboutUs refAboutUs={refAboutUs} />
         <Services refServices={refServices} />
-        <Projects refProjects={refProjects} />
+        <Clients refClients={refClients}/>
         <Contact refContact={refContact} />
       </main>
       <Footer />

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { socialMedia } from "../assets/social_media/icons";
+import { socialMedia } from "../assets/icons/icons";
 
 function Contact({ refContact }) {
   const singUpForm = useFormik({
@@ -14,15 +14,11 @@ function Contact({ refContact }) {
 
     validationSchema: Yup.object({
       name: Yup.string()
-        .min(2, "firstname minimum 2 character")
-        .required("firstname is required"),
-      subject: Yup.string()
-        .min(2, "subject minimum 2 character")
-        .required("subject is required"),
-      email: Yup.string().email("invalid email").required("email is required"),
-      message: Yup.string()
-        .min(4, "message minimum 4 characters")
-        .required("message is required"),
+        .min(2, "El nombre debe tener al menos 2 caracteres")
+        .required("Campo requerido"),
+      subject: Yup.string().required("Campo requerido"),
+      email: Yup.string().email("Email invalido").required("Campo requerido"),
+      message: Yup.string().required("Campo requerido"),
     }),
 
     onSubmit: (values) => {
@@ -46,23 +42,23 @@ function Contact({ refContact }) {
 
   return (
     <section ref={refContact} className="contact-container">
-      <h3 className="section-title-contact">CONTACT</h3>
+      <h3 className="section-title-contact">CONTACTO</h3>
 
-      <div className="contact-center-contain" style={{ color: "#E0E1E3" }}>
+      <div className="contact-center-container" >
         <div className="contact-internal-contain">
           <article className="contact-social-media">
-            <h4 style={{ color: "white" }}>LET'S WORK TOGHETER</h4>
+            <h4 >TRABAJEMOS JUNTOS</h4>
             <p>
-              Do you have an idea for a software project? We'd love to hear it!
-              Tell us the details and we will work together to make it a
-              reality.
+              ¿Tienes una idea para un proyecto de software?<br/>¡Nos encantaría
+              escucharlo! Cuéntanos los detalles y trabajaremos juntos para
+              convertirlo en un realidad.
             </p>
             <div className="social-media-icons">
               {socialMedia.map((media, i) => {
                 return (
                   <div key={i} className="social-media-icon-file">
                     {media.icon}
-                    <p style={{ color: "#E0E1E3" }}>{media.text}</p>
+                    <p >{media.text}</p>
                   </div>
                 );
               })}
@@ -75,7 +71,7 @@ function Contact({ refContact }) {
             action="submit"
             onSubmit={singUpForm.handleSubmit}
           >
-            <label htmlFor="name">NAME</label>
+            <label htmlFor="name">NOMBRE</label>
             <input
               type="text"
               id="name"
@@ -93,7 +89,7 @@ function Contact({ refContact }) {
                 singUpForm.touched.name &&
                 singUpForm.errors.name}
             </p>
-            <label htmlFor="subject">SUBJECT</label>
+            <label htmlFor="subject">ASUNTO</label>
             <input
               type="text"
               id="subject"
@@ -129,7 +125,7 @@ function Contact({ refContact }) {
                 singUpForm.touched.email &&
                 singUpForm.errors.email}
             </p>
-            <label htmlFor="message">MESSAGE</label>
+            <label htmlFor="message">MENSAJE</label>
             <textarea
               name="message"
               id=""
@@ -150,7 +146,7 @@ function Contact({ refContact }) {
                 singUpForm.errors.message}
             </p>
 
-            <button type="submit">SEND MESSAGE</button>
+            <button type="submit">ENVIAR</button>
           </form>
         </div>
       </div>

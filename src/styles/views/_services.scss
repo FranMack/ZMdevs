@@ -17,9 +17,35 @@
 }
 
 .services-center-container {
+  padding-top: 4%;
   margin: 0 auto;
-  width: fit-content;
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(3, 20vw);
+  grid-template-rows: repeat(2, 25vw);;
+  justify-content: center;
+
   gap: 30px;
+}
+
+
+
+@media screen and (max-width:678px) {
+
+  .services-container { h3{
+    font-size: 4rem;
+    text-align: center;
+}}
+  .services-center-container {
+    margin: 0 auto;
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(1, 80vw);
+    grid-template-rows: repeat(6, 60vw);;
+    gap: 30px;
+  }
+
+
+ 
 }

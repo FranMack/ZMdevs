@@ -1,5 +1,5 @@
-import logo from "../assets/images/logo1.png";
-import { socialMedia } from "../assets/social_media/icons";
+import logo from "../assets/images/zmDevsGradiente.png";
+import { socialMedia } from "../assets/icons/icons";
 
 function Footer() {
   const date = new Date();

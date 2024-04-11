@@ -1,11 +1,10 @@
 import { servicesArray } from "../assets/our_services/info";
 import ServicesCard from "../components/ServicesCard";
-servicesArray
 function Services({refServices}){
 
     return(
         <section ref={refServices} className="services-container">
-        <h3 className="services-section-title">SERVICES</h3>
+        <h3 className="services-section-title">SERVICIOS</h3>
 
         
        

@@ -1,5 +1,6 @@
 .aboutUs-container{
     width: 100vw;
+    height: fit-content;
     background-color: $backgroun_color4;
     color:$cfDev_textTerciaryColor;
     padding-top: 15vh;
@@ -15,7 +16,7 @@
 }
 
 .aboutUs-center-container{
-    height: 80vh;
+    height: fit-content;
     width: 100%;
     display: flex;
     
@@ -29,7 +30,7 @@
 
 .aboutUs-article{
     width: 100%;
-    height:100%;
+    height: 80vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -71,3 +72,27 @@
 
 
 
+@media screen and (max-width:678px) {
+
+    .aboutUs-center-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+       
+
+        
+    }
+
+    .aboutUs-container{
+        h3{
+            font-size: 4rem;
+            text-align: center;
+        }
+    }
+
+    .aboutUs-article{
+        height: 75vh;}
+
+    
+
+}

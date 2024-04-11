@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { servicesArray } from "../assets/our_services/info";
-import { arrows } from "../assets/social_media/icons";
+import { arrows } from "../assets/icons/icons";
 import ProjectCard from "../components/ProjectCard";
 
 function Projects({ refProjects }) {
@@ -25,7 +25,7 @@ function Projects({ refProjects }) {
   return (
     <section ref={refProjects} className="projects-container">
       <h3 className="services-section-title" style={{ color: "black" }}>
-        PROJECTS
+        CLIENTES
       </h3>
 
       <div className="horizontal-scroll-container">

@@ -1,5 +1,5 @@
-import logoColor from "../assets/images/l5.png";
-import logoBlanco from "../assets/images/l2.png";
+import logoColor from "../assets/images/zmdevsCortoGradiente.png";
+import logoBlanco from "../assets/images/l8.png";
 import { useState } from "react";
 import {SpainFlag, UKflag} from "../assets/svg/flags"
 function Navbar({scrollHandler,itemsNavbar}) {
@@ -26,10 +26,10 @@ function Navbar({scrollHandler,itemsNavbar}) {
           {itemsNavbar.map((item, i) => {
             return <li onClick={()=>{scrollHandler(item.ref)}} key={i}>{item.name}</li>;
           })}
-          <li className="flag-container">
+          {/*<li className="flag-container">
           <div className="flag"><SpainFlag/></div>
           <div className="flag"><UKflag/></div>
-          </li>
+        </li>*/}
         </ul>
 
       
