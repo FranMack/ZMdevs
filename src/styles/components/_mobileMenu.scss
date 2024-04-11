@@ -13,6 +13,8 @@
     z-index: 50;
     right: 0;
     font-size: 2rem;
+    transition: 1s ease;
+    transform: translateX(200%);
 }
 
 .mobile-menu-list{
@@ -27,6 +29,9 @@
         flex-direction: column;
         justify-content: space-evenly;
         list-style-type: none;
+        li:active{
+            color:$cfDev_primaryColor
+        }
 
     }
 }
@@ -39,4 +44,9 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+
+.mobileMenuOpen{
+    transform: translateX(0%);
 }

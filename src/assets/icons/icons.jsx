@@ -11,10 +11,10 @@ const instagram=(<FaInstagram title="Instagram"/>)
 
 
 export const socialMedia=[
-    {icon:email,link:"mailto:franmack556@gmail.com",text:"cfDev@gmail.com"},
+    {icon:email,link:"mailto:franmack556@gmail.com",text:"info@zmdevs.com"},
     {icon:phone,link:"https://www.instagram.com/nuggets/",text:"+54-9342-4564569"},
-    {icon:linkedin,link:"https://www.instagram.com/nuggets/",text:"cdDevs.linkedin"},
-    {icon:instagram,link:"https://www.instagram.com/nuggets/",text:"cfDevs"},
+    {icon:linkedin,link:"https://www.instagram.com/nuggets/",text:"zmdevs.linkedin"},
+    {icon:instagram,link:"https://www.instagram.com/nuggets/",text:"zmDevs"},
 ]
 
 

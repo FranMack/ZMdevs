@@ -2,6 +2,7 @@ import axios from "axios";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { socialMedia } from "../assets/icons/icons";
+import { Link } from "react-router-dom";
 
 function Contact({ refContact }) {
   const singUpForm = useFormik({
@@ -58,7 +59,7 @@ function Contact({ refContact }) {
                 return (
                   <div key={i} className="social-media-icon-file">
                     {media.icon}
-                    <p >{media.text}</p>
+                    <Link to={media.link} target="_blank"><p >{media.text}</p></Link>
                   </div>
                 );
               })}

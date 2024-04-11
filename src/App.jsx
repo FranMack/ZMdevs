@@ -22,6 +22,7 @@ function App() {
   const refServices = useRef();
   const refClients = useRef();
   const refContact = useRef();
+  const refMobileMenu=useRef()
 
   const scrollHandler = (elemRef) => {
     if (elemRef.current) {
@@ -138,16 +139,31 @@ window.addEventListener("resize",handleWindowSize)
 
 const [showMobileMenu,setShowMobileMenu]=useState(false)
 
-const handleShowMobileMenu=()=>{
-  setShowMobileMenu(!showMobileMenu)
-}
+const handleShowMobileMenu = () => {
+
+  
+  // Agregar o quitar la clase mobileMenuOpen
+  const mobileMenu = refMobileMenu.current;
+  if(!showMobileMenu){
+    setShowMobileMenu(true)
+    mobileMenu.classList.add("mobileMenuOpen");
+
+  }
+
+ else{
+   mobileMenu.classList.remove("mobileMenuOpen");
+    setShowMobileMenu(false)
+
+  }
+  
+};
   
 
   return (
     <>
      
      {windowSize>768? (<Navbar scrollHandler={scrollHandler} itemsNavbar={itemsNavbar} />) :(<MobileNavbar handleShowMobileMenu={handleShowMobileMenu} />)}
-    {showMobileMenu && <MobileMenu scrollHandler={scrollHandler} itemsNavbar={itemsNavbar} handleShowMobileMenu={handleShowMobileMenu}/>}
+   <MobileMenu refMobileMenu={refMobileMenu} scrollHandler={scrollHandler} itemsNavbar={itemsNavbar} handleShowMobileMenu={handleShowMobileMenu}/>
       <main>
         <Header2 windowSize={windowSize} refHeader={refHeader} />
         <Carrusel/>

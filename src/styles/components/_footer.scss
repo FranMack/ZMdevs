@@ -45,10 +45,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    a{
+        text-decoration: none;
+        color:$cfDev_textPrimaryColor;
+        height: 80%;
+        width: 80%;
+    }
 
     svg{
-        height: 90%;
-        width: 90%;
+        height: 100%;
+        width: 100%;
     }
 }
 

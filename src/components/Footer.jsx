@@ -1,5 +1,6 @@
 import logo from "../assets/images/zmDevsGradiente.png";
 import { socialMedia } from "../assets/icons/icons";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const date = new Date();
@@ -13,8 +14,8 @@ function Footer() {
 
       <div className="footer-social-media">
         <div className="footer-social-media-icons">
-          {socialMedia.map((media) => {
-            return <>{media.icon}</>;
+          {socialMedia.map((media,i) => {
+            return  <Link to={media.link} target="_blank" key={i}>{media.icon}</Link>
           })}
         </div>
 

@@ -1,8 +1,8 @@
 import { ExitIcon,socialMedia } from "../assets/icons/icons";
-function MobileMenu({scrollHandler,itemsNavbar,handleShowMobileMenu}){
+function MobileMenu({scrollHandler,itemsNavbar,handleShowMobileMenu,refMobileMenu}){
 
     return(<>
-    <div className="mobile-menu-container">
+    <div ref={refMobileMenu} className="mobile-menu-container">
         <ExitIcon handleShowMobileMenu={handleShowMobileMenu}/>
 
         <div className="mobile-menu-list">
