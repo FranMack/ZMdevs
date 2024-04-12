@@ -1,0 +1,38 @@
+@import "../variables";
+
+
+.popUp-container{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+width: 25vw;
+aspect-ratio: 2;
+background-color: $backgroun_color3;
+border-radius: 12px;
+border:solid 3px $cfDev_primaryColor;
+transition: 2s ease-in;
+transform: translateX(600%);
+p{
+    font-size: 3rem;
+
+}
+}
+
+.popUp-motion{
+
+    transform: translateX(0%);
+}
+
+
+@media screen and (max-width:678px) {
+    .popUp-container{
+        width: 70vw;
+
+        p{
+            font-size: 2rem;
+        
+        }
+    }
+}

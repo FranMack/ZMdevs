@@ -13,13 +13,14 @@
 @import"./views/clients";
 @import "./components/mobileNavbar";
 @import "./components/mobileMenu";
+@import "./components/popUp";
 
 
 
 *{
     box-sizing: border-box;
     margin: 0;
-    padding: auto;
+    padding: 0;
 
 }
 

@@ -35,8 +35,8 @@ export const circleArrows={
 
 
 export const HamburguerMenu=({handleShowMobileMenu})=>{
-return(<FaBars onClick={handleShowMobileMenu} style={{marginRight:"5%"}}/>)}
+return(<FaBars id="menu-hamburguesa-icon" onClick={handleShowMobileMenu} style={{marginRight:"5%"}}/>)}
 
 export const ExitIcon=({handleShowMobileMenu})=>{
-    return(<BsXLg onClick={handleShowMobileMenu} style={{marginLeft:"5%"}}/>)}
+    return(<BsXLg onClick={handleShowMobileMenu} style={{marginLeft:"5%",marginTop:"5%"}}/>)}
 

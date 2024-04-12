@@ -1,4 +1,5 @@
 import { ExitIcon,socialMedia } from "../assets/icons/icons";
+import { Link } from "react-router-dom";
 function MobileMenu({scrollHandler,itemsNavbar,handleShowMobileMenu,refMobileMenu}){
 
     return(<>
@@ -8,7 +9,8 @@ function MobileMenu({scrollHandler,itemsNavbar,handleShowMobileMenu,refMobileMen
         <div className="mobile-menu-list">
         <ul>
           {itemsNavbar.map((item, i) => {
-            return <li onClick={()=>{scrollHandler(item.ref)}} key={i}>{item.name}</li>;
+            return <li onClick={()=>{scrollHandler(item.ref)}} key={i}>
+              {item.name}</li>;
           })}
          
         </ul>
@@ -19,9 +21,9 @@ function MobileMenu({scrollHandler,itemsNavbar,handleShowMobileMenu,refMobileMen
 
       {socialMedia.map((media,i)=>{
         return(
-            <div key={i}>
+            <Link to={media.link} target="_blank" key={i}>
                 {media.icon}
-            </div>
+            </Link>
         )
       })}
       </div>

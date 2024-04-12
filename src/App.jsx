@@ -14,15 +14,13 @@ import MobileMenu from "./components/MobileMenu";
 function App() {
   const navigate = useNavigate();
 
-  
-
   //referencias
   const refHeader = useRef();
   const refAboutUs = useRef();
   const refServices = useRef();
   const refClients = useRef();
   const refContact = useRef();
-  const refMobileMenu=useRef()
+  const refMobileMenu = useRef();
 
   const scrollHandler = (elemRef) => {
     if (elemRef.current) {
@@ -46,15 +44,21 @@ function App() {
 
   function scrollHandler2() {
     const triggerBottom = window.innerHeight * 0.9;
-    const aboutUsInfo = refAboutUs.current.querySelector(
+    const aboutUsInfo = refAboutUs?.current?.querySelector(
       ".aboutUs-center-container"
     );
-    const servicesCards = refServices.current.querySelectorAll(".service-card");
+    const aboutUsIntro = refAboutUs?.current?.querySelector(
+      ".aboutUs-intro"
+    );
+
+
+    
+    const servicesCards = refServices?.current?.querySelectorAll(".service-card");
     /*const projectsCards = refProjects.current.querySelectorAll(".project-card");*/
-    const socialMedia = refContact.current.querySelector(
+    const socialMedia = refContact?.current?.querySelector(
       ".contact-social-media"
     );
-    const contactForm = refContact.current.querySelector(".contact-form");
+    const contactForm = refContact?.current?.querySelector(".contact-form");
 
     if (aboutUsInfo) {
       const topCoordinates = aboutUsInfo.getBoundingClientRect().top;
@@ -68,7 +72,23 @@ function App() {
       }
     }
 
-    servicesCards.forEach((card, i) => {
+
+    if (aboutUsIntro) {
+      const topCoordinates = aboutUsIntro.getBoundingClientRect().top;
+
+      if (topCoordinates < triggerBottom) {
+        aboutUsIntro.classList.add("efectoReveal");
+        aboutUsIntro.classList.remove("efectoRevealOut");
+      } else if (topCoordinates > triggerBottom) {
+        aboutUsIntro.classList.add("efectoRevealOut");
+        aboutUsIntro.classList.remove("efectoReveal");
+      }
+    }
+
+
+
+
+    servicesCards?.forEach((card, i) => {
       const cardTop = card.getBoundingClientRect().top;
 
       if (cardTop < triggerBottom) {
@@ -86,11 +106,9 @@ function App() {
       }
     });
 
-    const clientsCards = refClients.current.querySelectorAll(
-      ".client-card"
-    );
+    const clientsCards = refClients?.current?.querySelectorAll(".client-card");
 
-    clientsCards.forEach((card, i) => {
+    clientsCards?.forEach((card, i) => {
       const cardTop = card.getBoundingClientRect().top;
 
       if (cardTop < triggerBottom) {
@@ -127,49 +145,66 @@ function App() {
     }
   }
 
-  const [windowSize,setWindowSize]=useState(window.innerWidth);
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+
+  const handleWindowSize = () => {
+    setWindowSize(window.innerWidth);
+  };
+  window.addEventListener("resize", handleWindowSize);
+
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+  const handleShowMobileMenu = () => {
+    // Agregar o quitar la clase mobileMenuOpen
+    const mobileMenu = refMobileMenu.current;
+    if (!showMobileMenu) {
+      setShowMobileMenu(true);
+      mobileMenu.classList.add("mobileMenuOpen");
+    } else {
+      mobileMenu.classList.remove("mobileMenuOpen");
+      setShowMobileMenu(false);
+    }
+  };
 
   
-  const handleWindowSize=()=>{
-    setWindowSize(window.innerWidth)
+
+
+   
+   
   
-}
-window.addEventListener("resize",handleWindowSize)
-
-
-const [showMobileMenu,setShowMobileMenu]=useState(false)
-
-const handleShowMobileMenu = () => {
-
   
-  // Agregar o quitar la clase mobileMenuOpen
-  const mobileMenu = refMobileMenu.current;
-  if(!showMobileMenu){
-    setShowMobileMenu(true)
-    mobileMenu.classList.add("mobileMenuOpen");
-
+  const handleExitMenu=(event)=>{
+    const mobileMenu = refMobileMenu.current;
+ 
+    if(showMobileMenu && event.target.className!=="mobile-menu-container" && event.target.id!=="menu-hamburguesa-icon" && event.target.parentNode.tagName!=="svg"){
+      mobileMenu.classList.remove("mobileMenuOpen");
+      setShowMobileMenu(false);
+    }
   }
-
- else{
-   mobileMenu.classList.remove("mobileMenuOpen");
-    setShowMobileMenu(false)
-
-  }
+  window.addEventListener("click",handleExitMenu)
+ 
   
-};
-  
+
 
   return (
     <>
-     
-     {windowSize>768? (<Navbar scrollHandler={scrollHandler} itemsNavbar={itemsNavbar} />) :(<MobileNavbar handleShowMobileMenu={handleShowMobileMenu} />)}
-   <MobileMenu refMobileMenu={refMobileMenu} scrollHandler={scrollHandler} itemsNavbar={itemsNavbar} handleShowMobileMenu={handleShowMobileMenu}/>
+      {windowSize > 768 ? (
+        <Navbar scrollHandler={scrollHandler} itemsNavbar={itemsNavbar} />
+      ) : (
+        <MobileNavbar handleShowMobileMenu={handleShowMobileMenu} />
+      )}
+      <MobileMenu
+        refMobileMenu={refMobileMenu}
+        scrollHandler={scrollHandler}
+        itemsNavbar={itemsNavbar}
+        handleShowMobileMenu={handleShowMobileMenu}
+      />
       <main>
         <Header2 windowSize={windowSize} refHeader={refHeader} />
-        <Carrusel/>
+        <Carrusel />
         <AboutUs refAboutUs={refAboutUs} />
         <Services refServices={refServices} />
-        <Clients refClients={refClients}/>
+        <Clients refClients={refClients} />
         <Contact refContact={refContact} />
       </main>
       <Footer />

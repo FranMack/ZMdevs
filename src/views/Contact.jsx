@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { socialMedia } from "../assets/icons/icons";
 import { Link } from "react-router-dom";
+import PopUp from "../components/PopUp"
 
 function Contact({ refContact }) {
   const singUpForm = useFormik({
@@ -33,7 +34,7 @@ function Contact({ refContact }) {
         .then((response) => {
           console.log(response.data);
           singUpForm.resetForm();
-          handleModal();
+          handleMensajeEnviado()
         })
         .catch((error) => {
           console.log(error);
@@ -41,11 +42,24 @@ function Contact({ refContact }) {
     },
   });
 
+  function handleMensajeEnviado(){
+    const popUp=document.querySelector(".popUp-container")
+    console.log("cambio")
+    if(popUp){
+      popUp.classList.add("popUp-motion")
+      setTimeout(()=>{
+        popUp.classList.remove("popUp-motion")
+      },3000)
+    }
+  }
+
   return (
     <section ref={refContact} className="contact-container">
+     
       <h3 className="section-title-contact">CONTACTO</h3>
 
       <div className="contact-center-container" >
+      <PopUp/>
         <div className="contact-internal-contain">
           <article className="contact-social-media">
             <h4 >TRABAJEMOS JUNTOS</h4>

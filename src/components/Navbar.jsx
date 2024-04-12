@@ -18,7 +18,7 @@ function Navbar({scrollHandler,itemsNavbar}) {
       className={`navbar-container navbarReveal ${scrollPosition > 100 && `navbar-move`} `}
     >
       <div className={` ${scrollPosition > 100 ? `navbar-logo-move`:`navbar-logo`}`}>
-        <img src={`${scrollPosition > 100 ? logoColor :logoBlanco}`} alt="CFdev" />
+        <img onClick={()=>{scrollHandler(itemsNavbar[0].ref)}} src={`${scrollPosition > 100 ? logoColor :logoBlanco}`} alt="CFdev" />
       </div>
 
       <div className="navbar-menu">

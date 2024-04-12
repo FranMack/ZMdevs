@@ -70,7 +70,7 @@ function Carrusel({refHeader}) {
     setcarruselBottonPosition(carruselBottonPosition)
 
 
-
+    setCurrentIndex(1)
     const intervalId = setInterval(() => {
       const initialSlide = 0;
       const finalSlide = infoCarrusel.length - 1;
@@ -87,11 +87,11 @@ function Carrusel({refHeader}) {
 
 
 
-    }, 7000);
+    }, 4000);
   
     // Devuelve una función de limpieza para limpiar el intervalo cuando el componente se desmonte o cuando el estado cambie
     return () => clearInterval(intervalId);
-  }, []);
+  }, [scrollPosition]);
 
 
 

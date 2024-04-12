@@ -44,6 +44,21 @@ aspect-ratio: 3;
 
 
 
+@media screen and (max-width:1200px) {
+
+  .clients-center-container{
+    margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 25vw);
+  justify-content: center;
+  gap: 3vw;
+}
+
+}
+
+
+
 @media screen and (max-width:678px) {
 
   .clients-container { h3{
@@ -61,3 +76,4 @@ aspect-ratio: 3;
 }
 
 }
+
