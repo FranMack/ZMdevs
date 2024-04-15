@@ -19,10 +19,8 @@ function AboutUs({ refAboutUs }) {
             </div>
             <h4>Carlos Zaburlin</h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At rem
-              qui hic illo esse vitae quos! Facilis ullam voluptates
-              repellendus, nulla dolores eum error officia repellat consequatur
-              accusantium cum blanditiis?
+              Analista Informatico Universidad Nacional del Litoral.<br/>
+              Full-stack developer especializado en React & React Native.
             </p>
           </article>
           <article className="aboutUs-article">
@@ -31,10 +29,8 @@ function AboutUs({ refAboutUs }) {
             </div>
             <h4>Francisco Mackinnon</h4>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At rem
-              qui hic illo esse vitae quos! Facilis ullam voluptates
-              repellendus, nulla dolores eum error officia repellat consequatur
-              accusantium cum blanditiis?
+              Ingeniero Civil Universidad Tecnológica Nacional.<br/>
+              Full-stack developer con especial expertice en React & Node js.
             </p>
           </article>
         </div>

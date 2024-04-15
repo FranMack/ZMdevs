@@ -47,7 +47,7 @@
 @media screen and (max-width:678px) {
 
   .services-container { h3{
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
 }}
   .services-center-container {
@@ -55,7 +55,7 @@
     width: fit-content;
     display: grid;
     grid-template-columns: repeat(1, 80vw);
-    grid-template-rows: repeat(6, 60vw);;
+    grid-template-rows: repeat(6, 80vw);;
     gap: 30px;
   }
 
