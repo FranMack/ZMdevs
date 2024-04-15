@@ -41,7 +41,7 @@ export const servicesArray = [
   {
     title: "Consultoría",
     description:
-      "Nos especializamos en brindar asesoramiento técnico integral a nuestros clientes. Nuestro equipo de expertos en IT está dedicado a proporcionar soluciones personalizadas que optimicen el rendimiento, la seguridad y la eficiencia de los sistemas informáticos de su empresa. Ya sea en la implementación de nuevas tecnologías, la resolución de problemas o la optimización de procesos, estamos comprometidos a ofrecerle el soporte técnico que necesita para alcanzar sus objetivos empresariales.",
+      "Brindamos asesoramiento técnico integral a empresas. Nuestro equipo especializado busca optimizar el rendimiento, seguridad y eficiencia de los sistemas informáticos de los clientes. Desde implementaciones tecnológicas hasta resolución de problemas y optimización de procesos, nos comprometemos a proporcionar el soporte necesario para alcanzar los objetivos empresariales.",
     image: consultancyVector,
   },
 ];

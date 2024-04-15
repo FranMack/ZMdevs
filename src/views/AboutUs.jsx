@@ -29,7 +29,7 @@ function AboutUs({ refAboutUs }) {
             <p>
               Analista Informatico Universidad Nacional del Litoral.
               <br />
-              Co-fundador de ZMDevs, es un líder apasionado y visionario en el
+              Co-fundador de ZMDevs, líder apasionado y visionario en el
               campo de la consultoría IT.
             </p>
           </article>
@@ -41,7 +41,7 @@ function AboutUs({ refAboutUs }) {
             <p>
               Ingeniero Civil Universidad Tecnológica Nacional.
               <br />
-              Co-fundador de ZMDevs, es un talentoso desarrollador y gestor de
+              Co-fundador de ZMDevs,talentoso desarrollador y gestor de
               proyectos con un enfoque meticuloso y orientado a resultados.
             </p>
           </article>
