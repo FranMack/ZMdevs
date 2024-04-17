@@ -28,7 +28,7 @@ export const socialMedia = [
   {
     icon: instagram,
     link: "https://www.instagram.com/zmdevs/",
-    text: "zmDevs",
+    text: "ZMDevs",
   },
 ];
 
