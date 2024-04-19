@@ -8,7 +8,7 @@ function AboutUs({ refAboutUs }) {
 
         <article className="aboutUs-intro">
           <p>
-            "Somos un equipo de desarrolladores comprometidos con la excelencia
+            Somos un equipo de desarrolladores comprometidos con la excelencia
             en cada línea de código.
             <br />
             Nos destacamos por nuestra capacidad para comprender las necesidades
@@ -16,7 +16,7 @@ function AboutUs({ refAboutUs }) {
             Creemos en la comunicación abierta y la colaboración estrecha con
             nuestros clientes en cada etapa del proceso de desarrollo. Nos
             apasiona crear soluciones innovadoras que cumplan los objetivos de
-            nuestros clientes."
+            nuestros clientes.
           </p>
         </article>
 
