@@ -64,9 +64,9 @@ function Contact({ refContact }) {
           <article className="contact-social-media">
             <h4 >TRABAJEMOS JUNTOS</h4>
             <p>
-              ¿Tienes una idea para un proyecto de software?<br/>¡Nos encantaría
+              ¿Tenés una idea para un proyecto de software?<br/>¡Nos encantaría
               escucharlo! Cuéntanos los detalles y trabajaremos juntos para
-              convertirlo en un realidad.
+              convertirlo en realidad.
             </p>
             <div className="social-media-icons">
               {socialMedia.map((media, i) => {
