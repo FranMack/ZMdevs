@@ -16,11 +16,11 @@
 .mobile-navbar-logo-container {
   margin-left: 2%;
   height: 65%;
+  aspect-ratio: 2.37;
 
   img {
     width: 100%;
-    //object-fit: cover;
-    height: calc(100% - 35px);
+    object-fit: cover;
     opacity: 0.7;
   }
 }
