@@ -1,241 +1,175 @@
 @import "../variables";
 
-.header2-container{
-
+.header2-container {
   position: relative; /* Establece el contexto de posicionamiento */
-    width: 100vw;
-    height:100vh ;
-    display: flex;
-    background-color: $backgroun_color3;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Para asegurarse de que el video no se desborde */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: $backgroun_color3;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Para asegurarse de que el video no se desborde */
 
-    h3{
-        font-family: $cfDev_primaryFont;
-        font-style:oblique;
-        font-size: 3.5rem;
-        font-weight:400;
-        color: $cfDev_primaryColor;
-        margin-top: 2%;
-    }
-   
+  h3 {
+    font-family: $cfDev_primaryFont;
+    font-style: oblique;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: $cfDev_primaryColor;
+    margin-top: 2%;
+  }
 }
 
-
-.header2-center-container{
+.header2-center-container {
   position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 50%;
   height: fit-content;
- 
-  
 }
 
+.header2-logo-container {
+  background-size: contain;
+  background-position: center;
+  width: 100%;
 
-.header2-logo-container{
-    background-size: contain;
-    background-position: center;
+  img {
+    height: 100%;
     width: 100%;
-  
-
-    img{
-      height: 100%;
-      width: 100%;
-      object-fit:contain;
-      opacity: 1;
-      z-index: -1;
+    object-fit: contain;
+    opacity: 1;
+    z-index: -1;
   }
-  
-   
 }
 
-
-
-
-.header2-fondo{
+.header2-fondo {
   height: 100%;
   width: 100%;
   inset: 0;
-  object-fit:cover;
+  object-fit: cover;
   z-index: 0; /* Asegura que el video esté detrás del contenido */
 }
 
-
- .sombraLogo {
-    filter: drop-shadow(4px 8px 50px $cfDev_textPrimaryColor);
-  }
-
-
-
+.sombraLogo {
+  filter: drop-shadow(4px 8px 50px $cfDev_textPrimaryColor);
+}
 
 //ANIMACIONES
 .textMotion {
-    text-align: center;
-    font-weight: 400;
-    display: block;
-    white-space: nowrap;
-    border-right: 4px solid transparent;
-    animation: typing 1.5s steps(29) 2s, blink 0.5s infinite step-end alternate 2s,
-      backgroundEfect 20s 3s infinite linear;
-    overflow: hidden;
-    animation-fill-mode: both;
-    color: transparent;
-    background-color: $cfDev_primaryFont;
-    -webkit-text-stroke: 1px $cfDev_primaryFont;
-    -webkit-background-clip: text;
-  
-    background-position: 0 0;
+  text-align: center;
+  font-weight: 400;
+  display: block;
+  white-space: nowrap;
+  border-right: 4px solid transparent;
+  animation: typing 1.5s steps(29) 2s, blink 0.5s infinite step-end alternate 2s,
+    backgroundEfect 20s 3s infinite linear;
+  overflow: hidden;
+  animation-fill-mode: both;
+  color: transparent;
+  background-color: $cfDev_primaryFont;
+  -webkit-text-stroke: 1px $cfDev_primaryFont;
+  -webkit-background-clip: text;
+
+  background-position: 0 0;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
   }
-  
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-      width: 29ch;
+  to {
+    width: 29ch;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: $cfDev_primaryFont;
+  }
+}
+
+.logoReveal {
+  animation-name: logoReveal;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: both;
+}
+
+@keyframes logoReveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.headerOut {
+  animation-name: headerOut;
+  animation-duration: 2s;
+  animation-delay: 5s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
+@keyframes headerOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    transform: translateX(0%) scale(1);
+
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header2-container {
+    h3 {
+      font-size: 3rem;
     }
   }
-  
-  @keyframes blink {
-    50% {
-      border-color: $cfDev_primaryFont;
+}
+
+@media screen and (max-width: 1000px) {
+  .header2-container {
+    h3 {
+      font-size: 2.5rem;
     }
   }
+}
 
-
-  .logoReveal {
-    animation-name: logoReveal;
-    animation-duration: 2s;
-    animation-timing-function: ease-in;
-    animation-fill-mode: both;
-  }
-
-
-  @keyframes logoReveal {
-    from {
-      opacity: 0;
+@media screen and (max-width: 678px) {
+  .header2-container {
+    h3 {
+      font-size: 2.5rem;
+      margin-top: 5%;
     }
-    to {
-      opacity: 1;
-    }
-  }
-
-
-  
-
-  .headerOut {
-    animation-name: headerOut;
-    animation-duration: 2s;
-    animation-delay: 5s;
-    animation-timing-function: ease;
-    animation-fill-mode: both;
-  }
-  
-  @keyframes headerOut {
-    from {
-   
-      opacity: 1;
-    }
-    to {
-    
-      transform: translateX(0%) scale(1);;
-    
-      opacity: 0;
-    }
-  }
-  
- 
-
-
- 
-
-  @media screen and (max-width:1200px) {
-
-
-    .header2-container{
-
-   
-    
-        h3{
-       
-            font-size: 3rem;
-       
-        
-        }
-       
-    }
-
   }
 
-  @media screen and (max-width:1000px) {
-
-
-    .header2-container{
-
-   
-    
-        h3{
-       
-            font-size: 2.5rem;
-       
-        
-        }
-       
-    }
-
+  .header2-center-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1; /* Asegura que el logo esté por encima del video */
+    width: 130%;
+    height: fi;
   }
 
-
-  @media screen and (max-width:678px) {
-
-
-    .header2-container{
-
-    
-        h3{
-        
-            font-size: 2.5rem;
-            margin-top: 5%;
-            
-        }
-       
-    }
-
-    .header2-center-container{
-      
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      z-index: 1; /* Asegura que el logo esté por encima del video */
-      width: 130%;
-      height: fi;
-
-      
-    }
-    
-    
-    .header2-logo-container{
-    
-        background-size: contain;
-        background-position: center;
-        width: 55%;
-    
-
-    }
-    
-    img{
-        height: 100%;
-        width: 100%;
-        object-fit:cover;
-        opacity: 1;
-        z-index: -1;
-    }
-    
-    
-    
+  .header2-logo-container {
+    background-size: contain;
+    background-position: center;
+    width: 55%;
   }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 1;
+    z-index: -1;
+  }
+}
