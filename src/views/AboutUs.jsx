@@ -41,7 +41,7 @@ function AboutUs({ refAboutUs }) {
             <p>
               Ingeniero Civil Universidad Tecnológica Nacional.
               <br />
-              Co-fundador de ZMDevs,talentoso desarrollador y gestor de
+              Co-fundador de ZMDevs, desarrollador y gestor de
               proyectos con un enfoque meticuloso y orientado a resultados.
             </p>
           </article>
