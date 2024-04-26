@@ -8,11 +8,11 @@ function AboutUs({ refAboutUs }) {
 
         <article className="aboutUs-intro">
           <p>
-            Somos un equipo de desarrolladores comprometidos con la excelencia
+            Somos un equipo de desarrolladores comprometidos con la excelencia<br />
             en cada línea de código.
-            <br />
-            Nos destacamos por nuestra capacidad para comprender las necesidades
-            específicas de cada proyecto y adaptarnos rápidamente a los cambios.
+            <br /><br />
+            Nos destacamos por nuestra capacidad para comprender las necesidades<br />
+            específicas de cada proyecto y adaptarnos rápidamente a los cambios.<br /><br />
             Creemos en la comunicación abierta y la colaboración estrecha con
             nuestros clientes en cada etapa del proceso de desarrollo. Nos
             apasiona crear soluciones innovadoras que cumplan los objetivos de
@@ -29,7 +29,7 @@ function AboutUs({ refAboutUs }) {
             <p>
               Analista Informatico Universidad Nacional del Litoral.
               <br />
-              Co-fundador de ZMDevs, líder apasionado y visionario en el
+              Co-fundador de ZMDevs, líder apasionado y visionario en el<br />
               campo de la consultoría IT.
             </p>
           </article>
@@ -42,7 +42,7 @@ function AboutUs({ refAboutUs }) {
               Ingeniero Civil Universidad Tecnológica Nacional.
               <br />
               Co-fundador de ZMDevs, desarrollador y gestor de
-              proyectos con un enfoque meticuloso y orientado a resultados.
+              proyectos <br />con un enfoque meticuloso y orientado a resultados.
             </p>
           </article>
         </div>
