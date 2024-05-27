@@ -10,6 +10,8 @@ import Services from "./views/Services";
 import Clients from "./views/Clients";
 import MobileNavbar from "./components/MobileNavbar";
 import MobileMenu from "./components/MobileMenu";
+import { WhatsUpButton } from "./components/WhatsUpButton";
+import { WhatsUpContacts } from "./components/WhatsUpContacts";
 
 function App() {
   const navigate = useNavigate();
@@ -182,6 +184,14 @@ function App() {
     }
   }
   window.addEventListener("click",handleExitMenu)
+
+
+  const [openWhatsUp,setOpenWhatsUp]=useState(false);
+
+  const handleWhatsUp=()=>{
+
+    setOpenWhatsUp(!openWhatsUp)
+  }
  
   
 
@@ -200,6 +210,10 @@ function App() {
         handleShowMobileMenu={handleShowMobileMenu}
       />
       <main>
+        {!openWhatsUp && 
+          <WhatsUpButton handleWhatsUp={handleWhatsUp} />
+       }
+        {openWhatsUp && <WhatsUpContacts handleWhatsUp={handleWhatsUp}/>}
         <Header2 windowSize={windowSize} refHeader={refHeader} />
         <Carrusel />
         <AboutUs refAboutUs={refAboutUs} />

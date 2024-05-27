@@ -1,0 +1,92 @@
+@import "../variables";
+
+.whats-up-contacts-container{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    bottom: 5%;
+    right: 5%;
+  width: 30%;
+  z-index: 10;
+  padding-bottom: 10px;
+  border-radius: 15px;
+
+  background: linear-gradient(315deg, rgba(1,242,127,1) 0%, rgba(12,103,84,1) 72%, rgba(15,68,63,1) 100%);
+
+    .auxiliar-close-icon{
+        width: 100%;
+        display: flex;
+        justify-content: end;
+     
+    }
+    h5{
+        font-size: 1.35rem;
+        font-weight: 600;
+        color:$cfDev_textTerciaryColor;
+       
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+.whats-up-card{
+    width: 90%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    column-gap: 10%;
+
+    border-radius: 15px;
+    background: linear-gradient(315deg, rgba(9,13,14,1) 35%, rgba(28,37,40,1) 77%);
+    cursor: pointer;
+
+ 
+    .whats-up-card-image-container{
+        height: 70%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+
+    }
+    img{
+      object-fit: cover;
+      border-radius: 50%;
+      margin-left: 10%;
+      background: $backgroun_color2;
+
+
+    }
+
+    .whats-up-card-info-container{
+        h4{
+            font-size: 2rem;
+            font-weight: 600;
+            color: $cfDev_primaryColor;
+        }
+        p{
+            font-size: 1.4rem;
+            color: #696969;;
+        }
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+ 
+    .whats-up-contacts-container{
+        width: 50%;
+    }
+  }
+
+@media screen and (max-width: 678px) {
+ 
+    .whats-up-contacts-container{
+        width: 90%;
+    }
+  }
+  
+
+
+  
+

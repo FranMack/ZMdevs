@@ -14,6 +14,8 @@
 @import "./components/mobileNavbar";
 @import "./components/mobileMenu";
 @import "./components/popUp";
+@import "./components//whatsUpContacts";
+@import "./components/whatsUpButton";
 
 
 
@@ -104,3 +106,9 @@ body{
   }
 }
   
+
+main{
+  position: relative;
+
+  
+}
