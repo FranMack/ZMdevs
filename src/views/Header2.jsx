@@ -1,10 +1,11 @@
 import logo1 from "../assets/images/zmDevs.png";
 import logoCorto from "../assets/images/zmdevsLogoCorto.png";
-import videoFondo from "../assets/videoFondo.mp4";
-import imagenFondo from "../assets/carrusel/desk1.jpg";
-import Carrusel from "../components/Carrusel";
+import { useContext } from "react";
+import { LanguageContext } from "../context/useContext";
 
 function Header2({ refHeader, windowSize }) {
+
+  const { language } = useContext(LanguageContext);
   return (
     <>
       <div ref={refHeader} className="header2-container">
@@ -18,7 +19,9 @@ function Header2({ refHeader, windowSize }) {
           </div>
 
           {windowSize > 678 && (
-            <h3 className="textMotion"> CONVIRTIENDO IDEAS EN CODIGO</h3>
+            <h3 className="textMotion">
+              {language==="spanish" ? "CONVIRTIENDO IDEAS EN CODIGO" :"TURNING IDEAS INTO CODE"}
+               </h3>
           )}
         </div>
         {/*<img className="header2-fondo" src={imagenFondo} alt="imagen-header" />*/}

@@ -1,9 +1,12 @@
 import { useEffect, useState,useRef } from "react";
 import { infoCarrusel } from "../assets/carrusel/info.carrusel";
 import { circleArrows } from "../assets/icons/icons";
+import { useContext } from "react";
+import { LanguageContext } from "../context/useContext";
 
 function Carrusel({refHeader}) {
 
+  const { language } = useContext(LanguageContext);
 
   const listRef = useRef();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -109,10 +112,10 @@ function Carrusel({refHeader}) {
       <div className="carrusel-slider" ref={listRef}>
         {infoCarrusel.map((data,i)=>{
           return( <div key={i} className="image-container" >
-          <img className="image-carrusel" src={data.image} alt={data.title} />
+          <img className="image-carrusel" src={data.image} alt={data.titleSpanish} />
           <div className="carrusel-center-container">
-        <h3>{infoCarrusel[currentIndex].title}</h3>
-        <p>{infoCarrusel[currentIndex].text}</p>
+        <h3>{language==="spanish" ? infoCarrusel[currentIndex].titleSpanish:infoCarrusel[currentIndex].titleEnglish}</h3>
+        
       </div>
          </div>)
         })}

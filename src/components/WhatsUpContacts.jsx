@@ -1,8 +1,10 @@
-import { useNavigate } from "react-router-dom";
 import cocoPicture from "../assets/images/coco_profile.png";
 import franPicture from "../assets/images/fran_profile.png";
+import { useContext } from "react";
+import { LanguageContext } from "../context/useContext";
 
 export function CloseIcon({ onClick }) {
+  
   return (
     <>
       <svg
@@ -24,8 +26,8 @@ export function CloseIcon({ onClick }) {
 }
 
 export function WhatsUpContacts({ handleWhatsUp }) {
-  const navigate = useNavigate();
 
+  const { language } = useContext(LanguageContext);
   const linkCoco = () => {
     window.open('https://wa.me/5493425906598', '_blank');
    
@@ -39,7 +41,7 @@ export function WhatsUpContacts({ handleWhatsUp }) {
       <div className="auxiliar-close-icon">
         <CloseIcon onClick={handleWhatsUp} />
       </div>
-      <h5>Horario de Atención: Lun a Vie de 8 a 17hs y Sáb de 8 a 12hs.</h5>
+      <h5>{language==="spanish" ?"Horario de Atención: Lun a Vie de 8 a 17hs y Sáb de 8 a 12hs.":"Opening Hours: Mon to Fri from 8 a.m. to 5 p.m. and Sat from 8 a.m. to 12 p.m. (ARG)."}</h5>
 
       <div onClick={linkCoco} className="whats-up-card">
         <div className="whats-up-card-image-container">
@@ -47,7 +49,7 @@ export function WhatsUpContacts({ handleWhatsUp }) {
         </div>
         <div className="whats-up-card-info-container">
           <h4>Carlos</h4>
-          <p>Enviar mensaje</p>
+          <p>{language==="spanish" ? "Enviar mensaje":"Send Message"}</p>
         </div>
       </div>
       <div onClick={linkFran} className="whats-up-card">
@@ -56,7 +58,7 @@ export function WhatsUpContacts({ handleWhatsUp }) {
         </div>
         <div className="whats-up-card-info-container">
           <h4>Francisco</h4>
-          <p>Enviar mensaje</p>
+          <p>{language==="spanish" ? "Enviar mensaje":"Send Message"}</p>
         </div>
       </div>
     </div>

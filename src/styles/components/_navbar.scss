@@ -63,7 +63,7 @@ li:hover {
 
 
 .flag-container{
-  width: 10%;
+  width: 12%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,6 +71,7 @@ li:hover {
 
 .flag{
   height: 100%;
+  opacity: 0.5;
   display: flex;
   aspect-ratio: 1;
   svg{
@@ -78,6 +79,12 @@ li:hover {
   }
 
 }
+
+.flag-focus{
+  opacity: 1;
+}
+
+
 
 
 

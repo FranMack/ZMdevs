@@ -4,5 +4,5 @@ import mobile from "./mobile2.jpg"
 import coding from "./coding-man.jpg"
 
 export const infoCarrusel=[
-    {title:"Desarollo de aplicaciones",text:"",image:desk1}, {title:"Asesoramiento técnico",text:"",image:desk2},{title:"Diseño personalizado",text:"",image:mobile}, {title:"Optimización y mantenimiento",text:"",image:coding}
+    {titleSpanish:"Desarollo de aplicaciones",titleEnglish:"Application Development",image:desk1}, {titleSpanish:"Asesoramiento técnico",titleEnglish:"Technical advice",image:desk2},{titleSpanish:"Diseño personalizado",titleEnglish:"Personalized design",image:mobile}, {titleSpanish:"Optimización y mantenimiento",titleEnglish:"Optimization and maintenance",image:coding}
 ]
