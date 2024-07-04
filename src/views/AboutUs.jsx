@@ -74,7 +74,7 @@ function AboutUs({ refAboutUs }) {
             ) : (
               <>
                 <p>
-                  Computer Analyst, National University of the Littoral.
+                  Computer Analyst, National University of the Litoral.
                   <br />
                   Founder of ZMDevs, a passionate and visionary leader in the
                   <br />
