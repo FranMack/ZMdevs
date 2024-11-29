@@ -1,7 +1,9 @@
+
 /*import cocoPicture from "../assets/images/coco_profile.png";
 import franPicture from "../assets/images/fran_profile.png";
 import { useContext } from "react";
 import { LanguageContext } from "../context";
+
 function AboutUs({ refAboutUs }) {
   const { language } = useContext(LanguageContext);
   return (
@@ -67,6 +69,7 @@ function AboutUs({ refAboutUs }) {
                   Analista Informatico Universidad Nacional del Litoral.
                   <br />
                   Co-fundador de ZMDevs, líder apasionado y visionario en el
+       
                   <br />
                   campo de la consultoría IT.
                 </p>
@@ -74,9 +77,11 @@ function AboutUs({ refAboutUs }) {
             ) : (
               <>
                 <p>
+
                   Computer Analyst National University of the Litoral.
                   <br />
                   Co-founder of ZMDevs, passionate and visionary leader in the
+
                   <br />
                   field of IT consulting.
                 </p>
@@ -92,9 +97,11 @@ function AboutUs({ refAboutUs }) {
             {language === "spanish" ? (
               <>
                 <p>
+
                   Ingeniero Civil Universidad Tecnológica Nacional.
                   <br />
                   Co-fundador de ZMDevs, desarrollador y gestor de proyectos{" "}
+
                   <br />
                   con un enfoque meticuloso y orientado a resultados.
                 </p>
@@ -102,9 +109,11 @@ function AboutUs({ refAboutUs }) {
             ) : (
               <>
                 <p>
+
                   Civil Engineer National Technological University.
                   <br />
                   ZMDevs co-founder, developer and project manager
+
                   <br />
                   with a meticulous and results-oriented approach.
                 </p>
