@@ -1,7 +1,7 @@
 import cocoPicture from "../assets/images/coco_profile.png";
 import franPicture from "../assets/images/fran_profile.png";
 import { useContext } from "react";
-import { LanguageContext } from "../context/useContext";
+import { LanguageContext } from "../context";
 
 export function CloseIcon({ onClick }) {
   
@@ -25,7 +25,7 @@ export function CloseIcon({ onClick }) {
   );
 }
 
-export function WhatsUpContacts({ handleWhatsUp }) {
+export function WhatsUpContacts({ handleWhatsUp,openWhatsUp }) {
 
   const { language } = useContext(LanguageContext);
   const linkCoco = () => {
@@ -37,7 +37,7 @@ export function WhatsUpContacts({ handleWhatsUp }) {
     window.open('https://wa.me/5493424456154', '_blank');
   };
   return (
-    <div className="whats-up-contacts-container">
+    <div className={`whats-up-contacts-container ${openWhatsUp ? "active-whats-up":""}`}>
       <div className="auxiliar-close-icon">
         <CloseIcon onClick={handleWhatsUp} />
       </div>

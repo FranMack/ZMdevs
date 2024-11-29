@@ -1,9 +1,8 @@
-import logoColor from "../assets/images/zmdevsCortoGradiente.png";
+import { useContext, useState } from "react";
 import logoBlanco from "../assets/images/l8.png";
-import { useState } from "react";
+import logoColor from "../assets/images/zmdevsCortoGradiente.png";
 import { SpainFlag, UKflag } from "../assets/svg/flags";
-import { useContext } from "react";
-import { LanguageContext } from "../context/useContext";
+import { LanguageContext } from "../context/languageContext";
 
 function Navbar({ scrollHandler, itemsNavbar }) {
   const [scrollPosition, setScrolPosition] = useState(0);
@@ -18,9 +17,7 @@ function Navbar({ scrollHandler, itemsNavbar }) {
 
   return (
     <nav
-      className={`navbar-container navbarReveal ${
-        scrollPosition > 100 && `navbar-move`
-      } `}
+      className={`navbar-container  ${scrollPosition > 100 && `navbar-move`} `}
     >
       <div
         className={` ${
@@ -46,15 +43,21 @@ function Navbar({ scrollHandler, itemsNavbar }) {
                 }}
                 key={i}
               >
-                {language==="spanish" ? item.nameSpanish :item.nameEnglish}
+                {language === "spanish" ? item.nameSpanish : item.nameEnglish}
               </li>
             );
           })}
           <li className="flag-container">
-            <div onClick={toggleLanguage} className={language==="spanish"? "flag flag-focus":"flag"}>
+            <div
+              onClick={toggleLanguage}
+              className={language === "spanish" ? "flag flag-focus" : "flag"}
+            >
               <SpainFlag />
             </div>
-            <div onClick={toggleLanguage} className={language==="english"? "flag flag-focus":"flag"}>
+            <div
+              onClick={toggleLanguage}
+              className={language === "english" ? "flag flag-focus" : "flag"}
+            >
               <UKflag />
             </div>
           </li>

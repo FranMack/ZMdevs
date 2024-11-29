@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useFormik } from "formik";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import { socialMedia } from "../assets/icons/icons";
-import { Link } from "react-router-dom";
-import PopUp from "../components/PopUp"
-import { useContext } from "react";
-import { LanguageContext } from "../context/useContext";
+import PopUp from "../components/PopUp";
+import { LanguageContext } from "../context";
 
 function Contact({ refContact }) {
   const { language } = useContext(LanguageContext);
@@ -28,7 +28,7 @@ function Contact({ refContact }) {
 
     onSubmit: (values) => {
       axios
-        .post("https://formspree.io/f/xgegwpzd", {
+        .post("https://formspree.io/f/mnnqgrqw", {
           name: values.name,
           subject: values.subject,
           email: values.email,
@@ -37,7 +37,7 @@ function Contact({ refContact }) {
         .then((response) => {
           console.log(response.data);
           singUpForm.resetForm();
-          handleMensajeEnviado()
+          handleMensajeEnviado();
         })
         .catch((error) => {
           console.log(error);
@@ -45,48 +45,59 @@ function Contact({ refContact }) {
     },
   });
 
-  function handleMensajeEnviado(){
-    const popUp=document.querySelector(".popUp-container")
-    console.log("cambio")
-    if(popUp){
-      popUp.classList.add("popUp-motion")
-      setTimeout(()=>{
-        popUp.classList.remove("popUp-motion")
-      },3000)
+  function handleMensajeEnviado() {
+    const popUp = document.querySelector(".popUp-container");
+    console.log("cambio");
+    if (popUp) {
+      popUp.classList.add("popUp-motion");
+      setTimeout(() => {
+        popUp.classList.remove("popUp-motion");
+      }, 3000);
     }
   }
 
   return (
     <section ref={refContact} className="contact-container">
-     
-      <h3 className="section-title-contact">{language==="spanish" ? "CONTACTO" :"CONTACT"}</h3>
+      <h3 className="section-title-contact">
+        {language === "spanish" ? "Contacto" : "Contact"}
+      </h3>
 
-      <div className="contact-center-container" >
-      <PopUp/>
+      <div className="contact-center-container">
+        <PopUp />
         <div className="contact-internal-contain">
           <article className="contact-social-media">
-            <h4 >
-              {language==="spanish" ? "TRABAJEMOS JUNTOS" :"LET'S WORK TOGETHER"}
-              </h4>
-              {language==="spanish" ? <>
-              <p>
-              ¿Tenés una idea para un proyecto de software?<br/>¡Nos encantaría
-              escucharlo! Cuéntanos los detalles y trabajaremos juntos para
-              convertirlo en realidad.
-            </p>
-              </> :<>
-              <p>
-              Do you have an idea for a software project?<br/> We would love to
-              hear it! Tell us the details and we will work together to make it happen.
-            </p>
-              </>}
-           
+            <h4>
+              {language === "spanish"
+                ? "TRABAJEMOS JUNTOS"
+                : "LET'S WORK TOGETHER"}
+            </h4>
+            {language === "spanish" ? (
+              <>
+                <p>
+                  ¿Tenés una idea para un proyecto de software?
+                  <br />
+                  ¡Nos encantaría escucharlo! Cuéntanos los detalles y
+                  trabajaremos juntos para convertirlo en realidad.
+                </p>
+              </>
+            ) : (
+              <>
+                <p>
+                  Do you have an idea for a software project?
+                  <br /> We would love to hear it! Tell us the details and we
+                  will work together to make it happen.
+                </p>
+              </>
+            )}
+
             <div className="social-media-icons">
               {socialMedia.map((media, i) => {
                 return (
                   <div key={i} className="social-media-icon-file">
                     {media.icon}
-                    <Link to={media.link} target="_blank"><p >{media.text}</p></Link>
+                    <Link to={media.link} target="_blank">
+                      <p>{media.text}</p>
+                    </Link>
                   </div>
                 );
               })}
@@ -99,7 +110,9 @@ function Contact({ refContact }) {
             action="submit"
             onSubmit={singUpForm.handleSubmit}
           >
-            <label htmlFor="name">{language==="spanish" ? "NOMBRE" :"NAME"}</label>
+            <label htmlFor="name">
+              {language === "spanish" ? "NOMBRE" : "NAME"}
+            </label>
             <input
               type="text"
               id="name"
@@ -117,7 +130,9 @@ function Contact({ refContact }) {
                 singUpForm.touched.name &&
                 singUpForm.errors.name}
             </p>
-            <label htmlFor="subject">{language==="spanish" ? "ASUNTO" :"SUBJECT"}</label>
+            <label htmlFor="subject">
+              {language === "spanish" ? "ASUNTO" : "SUBJECT"}
+            </label>
             <input
               type="text"
               id="subject"
@@ -153,7 +168,9 @@ function Contact({ refContact }) {
                 singUpForm.touched.email &&
                 singUpForm.errors.email}
             </p>
-            <label htmlFor="message">{language==="spanish" ? "MENSAJE" :"MESSAGE"}</label>
+            <label htmlFor="message">
+              {language === "spanish" ? "MENSAJE" : "MESSAGE"}
+            </label>
             <textarea
               name="message"
               id=""
@@ -174,7 +191,9 @@ function Contact({ refContact }) {
                 singUpForm.errors.message}
             </p>
 
-            <button type="submit">{language==="spanish" ? "ENVIAR" :"SEND"}</button>
+            <button type="submit">
+              {language === "spanish" ? "ENVIAR" : "SEND"}
+            </button>
           </form>
         </div>
       </div>

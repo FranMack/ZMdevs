@@ -1,7 +1,7 @@
 import { ExitIcon,socialMedia } from "../assets/icons/icons";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { LanguageContext } from "../context/useContext";
+import { LanguageContext } from "../context/";
 import { SpainFlag,UKflag } from "../assets/svg/flags";
 function MobileMenu({scrollHandler,itemsNavbar,handleShowMobileMenu,refMobileMenu}){
   const { language, toggleLanguage } = useContext(LanguageContext);

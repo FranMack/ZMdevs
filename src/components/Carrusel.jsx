@@ -2,7 +2,7 @@ import { useEffect, useState,useRef } from "react";
 import { infoCarrusel } from "../assets/carrusel/info.carrusel";
 import { circleArrows } from "../assets/icons/icons";
 import { useContext } from "react";
-import { LanguageContext } from "../context/useContext";
+import { LanguageContext } from "../context";
 
 function Carrusel({refHeader}) {
 

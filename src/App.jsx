@@ -1,17 +1,18 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Carrusel from "./components/Carrusel";
 import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import AboutUs from "./views/AboutUs";
-import Contact from "./views/Contact";
-import Header2 from "./views/Header2";
-import Services from "./views/Services";
-import Clients from "./views/Clients";
-import MobileNavbar from "./components/MobileNavbar";
 import MobileMenu from "./components/MobileMenu";
+import MobileNavbar from "./components/MobileNavbar";
+import Navbar from "./components/Navbar";
 import { WhatsUpButton } from "./components/WhatsUpButton";
 import { WhatsUpContacts } from "./components/WhatsUpContacts";
+import { ScreenSizeContext } from "./context/screenSize.context";
+import { AboutUs2 } from "./views/AboutUs2";
+import Clients from "./views/Clients";
+import Contact from "./views/Contact";
+import Header2 from "./views/Header2";
+import Projects from "./views/Projects";
+import Services from "./views/Services";
 
 function App() {
   const navigate = useNavigate();
@@ -19,8 +20,11 @@ function App() {
   //referencias
   const refHeader = useRef();
   const refAboutUs = useRef();
+  const refAboutUsTitle=useRef()
+  const refAboutUsParagraph=useRef()
   const refServices = useRef();
   const refClients = useRef();
+  const refProjects=useRef();
   const refContact = useRef();
   const refMobileMenu = useRef();
 
@@ -35,58 +39,53 @@ function App() {
   };
 
   const itemsNavbar = [
-    { nameEnglish:"Home",nameSpanish: "Inicio", ref: refHeader },
-    { nameEnglish:"About us",nameSpanish: "Nosotros", ref: refAboutUs },
-    { nameEnglish:"Services",nameSpanish: "Servicios", ref: refServices },
-    { nameEnglish:"Clients",nameSpanish: "Clientes", ref: refClients },
-    { nameEnglish:"Contact",nameSpanish: "Contacto", ref: refContact },
+    { nameEnglish: "Home", nameSpanish: "Inicio", ref: refHeader },
+    { nameEnglish: "About us", nameSpanish: "Nosotros", ref: refAboutUs },
+    { nameEnglish: "Services", nameSpanish: "Servicios", ref: refServices },
+    { nameEnglish: "Clients", nameSpanish: "Clientes", ref: refClients },
+    { nameEnglish: "Contact", nameSpanish: "Contacto", ref: refContact },
   ];
 
   window.addEventListener("scroll", scrollHandler2);
 
   function scrollHandler2() {
     const triggerBottom = window.innerHeight * 0.9;
-    const aboutUsInfo = refAboutUs?.current?.querySelector(
-      ".aboutUs-center-container"
-    );
-    const aboutUsIntro = refAboutUs?.current?.querySelector(
-      ".aboutUs-intro"
-    );
+    const aboutTitle = refAboutUsTitle?.current
+    const aboutParagraph=refAboutUsParagraph?.current
 
-
-    
-    const servicesCards = refServices?.current?.querySelectorAll(".service-card");
+    const servicesCards =
+      refServices?.current?.querySelectorAll(".service-card");
     /*const projectsCards = refProjects.current.querySelectorAll(".project-card");*/
     const socialMedia = refContact?.current?.querySelector(
       ".contact-social-media"
     );
+
+    const projects=refProjects?.current;
     const contactForm = refContact?.current?.querySelector(".contact-form");
 
-    if (aboutUsInfo) {
-      const topCoordinates = aboutUsInfo.getBoundingClientRect().top;
+    if (aboutTitle) {
+      const topCoordinates = aboutTitle.getBoundingClientRect().top;
 
       if (topCoordinates < triggerBottom) {
-        aboutUsInfo.classList.add("efectoReveal");
-        aboutUsInfo.classList.remove("efectoRevealOut");
+        aboutTitle.classList.add("efectoReveal");
+        aboutTitle.classList.remove("efectoRevealOut");
       } else if (topCoordinates > triggerBottom) {
-        aboutUsInfo.classList.add("efectoRevealOut");
-        aboutUsInfo.classList.remove("efectoReveal");
+        aboutTitle.classList.add("efectoRevealOut");
+        aboutTitle.classList.remove("efectoReveal");
       }
     }
 
-
-    if (aboutUsIntro) {
-      const topCoordinates = aboutUsIntro.getBoundingClientRect().top;
+    if (aboutParagraph) {
+      const topCoordinates = aboutParagraph.getBoundingClientRect().top;
 
       if (topCoordinates < triggerBottom) {
-        aboutUsIntro.classList.add("efectoReveal");
-        aboutUsIntro.classList.remove("efectoRevealOut");
+        aboutParagraph.classList.add("efectoReveal");
+        aboutParagraph.classList.remove("efectoRevealOut");
       } else if (topCoordinates > triggerBottom) {
-        aboutUsIntro.classList.add("efectoRevealOut");
-        aboutUsIntro.classList.remove("efectoReveal");
+        aboutParagraph.classList.add("efectoRevealOut");
+        aboutParagraph.classList.remove("efectoReveal");
       }
     }
-
 
 
 
@@ -134,6 +133,19 @@ function App() {
       }
     }
 
+
+    if (projects) {
+      const topCoordinates = projects.getBoundingClientRect().top;
+
+      if (topCoordinates < triggerBottom) {
+        projects.classList.add("efectoReveal");
+        projects.classList.remove("efectoRevealOut");
+      } else if (topCoordinates > triggerBottom) {
+        projects.classList.add("efectoRevealOut");
+        projects.classList.remove("efectoReveal");
+      }
+    }
+
     if (contactForm) {
       const topCoordinates = socialMedia.getBoundingClientRect().top;
 
@@ -146,13 +158,6 @@ function App() {
       }
     }
   }
-
-  const [windowSize, setWindowSize] = useState(window.innerWidth);
-
-  const handleWindowSize = () => {
-    setWindowSize(window.innerWidth);
-  };
-  window.addEventListener("resize", handleWindowSize);
 
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
@@ -168,37 +173,44 @@ function App() {
     }
   };
 
-  
-
-
-   
-   
-  
-  
-  const handleExitMenu=(event)=>{
+  const handleExitMenu = (event) => {
     const mobileMenu = refMobileMenu.current;
- 
-    if(showMobileMenu && event.target.className!=="mobile-menu-container" && event.target.id!=="menu-hamburguesa-icon" && event.target.parentNode.tagName!=="svg"){
+
+    if (
+      showMobileMenu &&
+      event.target.className !== "mobile-menu-container" &&
+      event.target.id !== "menu-hamburguesa-icon" &&
+      event.target.parentNode.tagName !== "svg"
+    ) {
       mobileMenu.classList.remove("mobileMenuOpen");
       setShowMobileMenu(false);
     }
-  }
-  window.addEventListener("click",handleExitMenu)
+  };
 
+  const { screenWidth, setScreenWidth } = useContext(ScreenSizeContext);
 
-  const [openWhatsUp,setOpenWhatsUp]=useState(false);
+  const handleScreenWidth = () => {
+    setScreenWidth(window.innerWidth);
+  };
 
-  const handleWhatsUp=()=>{
+  useEffect(() => {
+    window.addEventListener("resize", handleScreenWidth);
+    window.addEventListener("click", handleExitMenu);
+    return () => {
+      window.removeEventListener("click", handleExitMenu);
+      window.addEventListener("resize", handleScreenWidth);
+    };
+  }, [showMobileMenu]);
 
-    setOpenWhatsUp(!openWhatsUp)
-  }
- 
-  
+  const [openWhatsUp, setOpenWhatsUp] = useState(false);
 
+  const handleWhatsUp = () => {
+    setOpenWhatsUp(!openWhatsUp);
+  };
 
   return (
     <>
-      {windowSize > 768 ? (
+      {screenWidth > 768 ? (
         <Navbar scrollHandler={scrollHandler} itemsNavbar={itemsNavbar} />
       ) : (
         <MobileNavbar handleShowMobileMenu={handleShowMobileMenu} />
@@ -210,15 +222,13 @@ function App() {
         handleShowMobileMenu={handleShowMobileMenu}
       />
       <main>
-        {!openWhatsUp && 
-          <WhatsUpButton handleWhatsUp={handleWhatsUp} />
-       }
-        {openWhatsUp && <WhatsUpContacts handleWhatsUp={handleWhatsUp}/>}
-        <Header2 windowSize={windowSize} refHeader={refHeader} />
-        <Carrusel />
-        <AboutUs refAboutUs={refAboutUs} />
+        {!openWhatsUp && <WhatsUpButton handleWhatsUp={handleWhatsUp} openWhatsUp={openWhatsUp} />}
+        <WhatsUpContacts handleWhatsUp={handleWhatsUp} openWhatsUp={openWhatsUp} />
+        <Header2 windowSize={screenWidth} refHeader={refHeader} />
         <Services refServices={refServices} />
         <Clients refClients={refClients} />
+        <Projects refProjects={refProjects} />
+        <AboutUs2 refAboutUs={refAboutUs}  refAboutUsTitle={refAboutUsTitle} refAboutUsParagraph={refAboutUsParagraph}/>
         <Contact refContact={refContact} />
       </main>
       <Footer />

@@ -2,17 +2,25 @@
 
 .services-container {
   min-width: 100vw;
-  background-color: $backgroun_color1;
+  background-color: $backgroun_color5;
   padding-bottom: 3%;
   color: $cfDev_textPrimaryColor;
   font-family: $cfDev_primaryFont;
-  padding-top: 15vh;
+  padding-top: 10vh;
+  padding-bottom:10vh;
   h3 {
-    font-family: $cfDev_primaryFont;
-    font-size: 2.8rem;
-    font-weight: 400;
-    color: $cfDev_textTerciaryColor;
-    margin-left: 2%;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+    color: $cfDev_textPrimaryColor;
+    margin-bottom: 1rem;
+  }
+  >p{
+    margin:  0 auto;
+    width: 50%;
+    color: $cfDev_tertiaryColor;
+    font-size: 1.6rem;
+    text-align: center;
   }
 }
 
@@ -45,6 +53,23 @@
 
 
 @media screen and (max-width:678px) {
+
+  .services-container {
+  
+    h3 {
+      text-align: center;
+      font-family: $cfDev_primaryFont;
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    >p{
+     
+      width: 80%;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+  }
 
   .services-container { h3{
     font-size: 3rem;

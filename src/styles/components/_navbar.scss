@@ -1,7 +1,6 @@
 @import "../variables";
 
 .navbar-container {
-  position: fixed;
   width: 100vw;
   height: 15vh;
   background-color: transparent;
@@ -17,11 +16,12 @@
 }
 
 .navbar-menu {
-  width: 45%;
-  margin-right: 2%;
+  width: 50%;
+  margin-right: 1%;
 
   ul {
     list-style: none;
+
     display: flex;
     justify-content: space-around;
     li{cursor: pointer}

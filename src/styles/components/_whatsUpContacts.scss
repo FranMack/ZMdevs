@@ -1,6 +1,9 @@
 @import "../variables";
 
 .whats-up-contacts-container{
+
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    opacity: 0;
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -14,7 +17,7 @@
   border-radius: 15px;
 
   background: linear-gradient(315deg, rgba(1,242,127,1) 0%, rgba(12,103,84,1) 72%, rgba(15,68,63,1) 100%);
-
+transform: translateX(200%);
     .auxiliar-close-icon{
         width: 100%;
         display: flex;
@@ -71,6 +74,18 @@
     }
 }
 
+
+
+.button-whats-up-out{
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    opacity: 0;
+}
+
+
+.active-whats-up{
+    opacity: 1;
+    transform: translateX(0%);
+}
 
 @media screen and (max-width: 1024px) {
  

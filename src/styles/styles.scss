@@ -3,6 +3,7 @@
 @import "./variables";
 @import "./components//navbar";
 @import "./views//aboutUs";
+@import "./views//aboutUs2";
 @import "./components/footer";
 @import "./views/services";
 @import "./views/contact";
@@ -33,7 +34,7 @@ html{
 body{
     overflow-x: hidden;
     font-family: $cfDev_primaryFont;
-    background-color: $backgroun_color1;
+    background-color: $backgroun_color3;
 }
 
 
@@ -56,6 +57,11 @@ body{
     width: 20px;
     height: 20px;
   }
+
+
+  
+
+
 
 
   //ANIMACIONES
@@ -109,6 +115,60 @@ body{
 
 main{
   position: relative;
-
+  overflow-x: hidden;
   
+}
+
+button{
+  cursor: pointer;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 29ch;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: $cfDev_primaryFont;
+  }
+}
+
+.logoReveal {
+  animation-name: logoReveal;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: both;
+}
+
+@keyframes logoReveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.headerOut {
+  animation-name: headerOut;
+  animation-duration: 2s;
+  animation-delay: 5s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
+@keyframes headerOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    transform: translateX(0%) scale(1);
+
+    opacity: 0;
+  }
 }

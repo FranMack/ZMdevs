@@ -1,79 +1,77 @@
 @import "../variables";
 
-.clients-container{
-    min-width: 100vw;
-    background-color: $backgroun_color2;
+.clients-container {
+  min-width: 100vw;
+  background-color: $backgroun_color2;
+  color: $cfDev_textPrimaryColor;
+  font-family: $cfDev_primaryFont;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  > h3 {
+    margin-left: 10%;
+    font-size: 3rem;
+    font-weight: 600;
     color: $cfDev_textPrimaryColor;
-    font-family: $cfDev_primaryFont;
-    padding-top: 15vh;
-    padding-bottom: 10vh;
-    h3 {
-      font-family: $cfDev_primaryFont;
-      font-size: 2.8rem;
-      font-weight: 400;
-      color: $backgroun_color1;
-      margin-left: 2%;
-    }
+    margin-bottom: 2vh;
+  }
 }
 
-.clients-center-container{
-  padding-top: 4%;
-    margin: 0 auto;
+.clients-center-container {
+  padding-top: 1%;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin: 0 auto;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 15vw);
-  justify-content: center;
+  justify-content: space-between;
   gap: 40px;
+  background-color: $backgroun_color2;
 }
 
-.client-card{
-  
-aspect-ratio: 3;
-    img{
-        width: 100%;
-        object-fit:contain;
-        filter: grayscale(100%) sepia(50%) hue-rotate(0deg) saturate(0%) brightness(100%) contrast(100%);
-        transition: 1s
-    };
+.client-card {
+  aspect-ratio: 3;
+  img {
+    width: 100%;
+    object-fit: contain;
+    filter: grayscale(100%) sepia(50%) hue-rotate(0deg) saturate(0%)
+      brightness(100%) contrast(100%);
+    transition: 1s;
+  }
 
-    img:hover{
-      transform: scale(1.1);
+  img:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .clients-center-container {
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 25vw);
+    justify-content: center;
+    gap: 3vw;
+  }
+}
+
+@media screen and (max-width: 678px) {
+  .clients-container {
+    padding-top: 12vh;
+    h3 {
+      margin: 0;
+      margin-bottom: 2vh;
+      font-size: 2.8rem;
+      text-align: center;
     }
-}
+  }
 
-
-
-
-@media screen and (max-width:1200px) {
-
-  .clients-center-container{
+  .clients-center-container {
     margin: 0 auto;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 25vw);
-  justify-content: center;
-  gap: 3vw;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 40vw);
+    justify-content: center;
+    gap: 10vw;
+  }
 }
-
-}
-
-
-
-@media screen and (max-width:678px) {
-
-  .clients-container { h3{
-    font-size: 3rem;
-    text-align: center;
-}}
-
-  .clients-center-container{
-    margin: 0 auto;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 40vw);
-  justify-content: center;
-  gap: 10vw;
-}
-
-}
-

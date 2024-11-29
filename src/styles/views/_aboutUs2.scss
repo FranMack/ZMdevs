@@ -1,0 +1,78 @@
+.aboutUs2-container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: $backgroun_color2;
+  color: $cfDev_textTerciaryColor;
+  padding-top: 10vh;
+  padding-bottom: 2%;
+
+  h3 {
+    font-family: $cfDev_primaryFont;
+    color: $cfDev_textSecundaryColor;
+    font-size: 3.2rem;
+    font-weight: 600;
+    margin-left: 10%;
+    color: $cfDev_textPrimaryColor;
+  }
+
+  .aboutUs2-center-container {
+    margin: 0 auto;
+    margin-top: 5vh;
+    width: 80%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
+    grid-template-rows: auto auto; /* Dos filas automáticas */
+    gap: 30px; /* Espaciado entre los elementos */
+  }
+
+  article {
+    color: $backgroun_color4;
+    padding: 1%;
+    h4 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 1vh;
+      color: $cfDev_textPrimaryColor;
+    }
+    p {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@media screen and (max-width: 678px) {
+  .aboutUs2-container {
+    h3 {
+      font-family: $cfDev_primaryFont;
+      color: $cfDev_textSecundaryColor;
+      font-size: 3.2rem;
+      font-weight: 600;
+      margin: 0 ;
+      margin-bottom: 2vh;
+      color: $cfDev_textPrimaryColor;
+      text-align: center;
+    }
+
+    .aboutUs2-center-container {
+      margin-top: 5vh;
+      margin-bottom: 5vh;
+      width: 80%;
+      height: 80%;
+      grid-template-columns: 1fr; /* Dos columnas de igual ancho */
+      gap: 15px; /* Espaciado entre los elementos */
+    }
+
+    article {
+  
+      h4 {
+        font-size: 2.2rem;
+        margin-bottom: 1vh;
+      
+      }
+      p {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

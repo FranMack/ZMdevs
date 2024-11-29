@@ -12,16 +12,16 @@ export const servicesArray = [
     titleSpanish: "Landing page",
     titleEnglish:"Landing page",
     descriptionSpanish:
-      "Creamos páginas de destino impactantes y efectivas que convierten a los visitantes en clientes potenciales ofreciendo una experiencia intuitiva y atractiva. Nuestros diseños optimizados destacan los productos y servicios de las empresas de forma eficaz.",
-    descriptionEnglish:"We create impactful and effective landing pages that convert visitors into leads by offering an intuitive and engaging experience. Our optimized designs highlight companies' products and services effectively.",
+      "Diseñamos landing pages impactantes y optimizadas para convertir visitantes en clientes, destacando tus productos y servicios con una experiencia atractiva e intuitiva.",
+    descriptionEnglish:"We design impactful landing pages optimized to convert visitors into customers, highlighting your products and services with an attractive and intuitive experience.",
       image: landingVector,
   },
   {
     titleSpanish: "Aplicaciones Web",
     titleEnglish:"Web Apps",
     descriptionSpanish:
-      "Desarrollamos aplicaciones web personalizadas y escalables que ofrecen funcionalidades específicas a través de navegadores, adaptándose a diversas plataformas y dispositivos. Nuestras soluciones garantizan una experiencia consistente y de calidad para los usuarios.",
-      descriptionEnglish:"We develop customized and scalable web applications that offer specific functionalities through browsers, adapting to various platforms and devices. Our solutions guarantee a consistent and quality experience for users.",
+      "Desarrollamos aplicaciones web personalizadas y escalables, diseñadas para satisfacer las necesidades específicas de tu negocio. Creamos soluciones que facilitan tus procesos y mejoran la eficiencia operativa, adaptándose a diversas plataformas y dispositivos para ofrecer una experiencia consistente y de alta calidad.",
+      descriptionEnglish:"We develop custom and scalable web applications, designed to meet the specific needs of your business. We create solutions that streamline your processes and enhance operational efficiency, adapting to various platforms and devices to deliver a consistent and high-quality experience.",
     image: webAppVector,
   },
   {
@@ -52,8 +52,8 @@ export const servicesArray = [
     titleSpanish: "Consultoría",
     titleEnglish:"Consultancy",
     descriptionSpanish:
-      "Brindamos asesoramiento técnico integral a empresas. Nuestro equipo especializado busca optimizar el rendimiento, seguridad y eficiencia de los sistemas informáticos de los clientes. Desde implementaciones tecnológicas hasta resolución de problemas y optimización de procesos, nos comprometemos a proporcionar el soporte necesario para alcanzar los objetivos empresariales.",
-      descriptionEnglish:"We provide comprehensive technical advice to companies. Our specialized team seeks to optimize the performance, security and efficiency of clients' computer systems. From technology implementations to problem resolution and process optimization, we are committed to providing the support necessary to achieve business objectives.",
+      "Ofrecemos asesoramiento técnico integral para optimizar el rendimiento, seguridad y eficiencia de los sistemas de tu empresa, brindando soporte en implementaciones, resolución de problemas y mejora de procesos para alcanzar tus objetivos.",
+      descriptionEnglish:"We provide comprehensive technical advice to optimize the performance, security, and efficiency of your company's systems, offering support in implementations, problem resolution, and process improvement to achieve your goals.",
     image: consultancyVector,
   },
 ];

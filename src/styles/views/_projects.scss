@@ -1,61 +1,414 @@
 @import "../variables";
 .projects-container {
   min-width: 100vw;
-  background-color: $backgroun_color5;
+  height: 100vh;
+  background-color: $backgroun_color2;
   color: $cfDev_textPrimaryColor;
   font-family: $cfDev_primaryFont;
-  padding-top: 15vh;
-  h3 {
-    font-family: $cfDev_primaryFont;
-    font-size: 2.8rem;
-    font-weight: 400;
-    color: $cfDev_textTerciaryColor;
-    margin-left: 2%;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  > h3 {
+    font-size: 3rem;
+    font-weight: 600;
+    color:$cfDev_textPrimaryColor;
+    margin-left:10%;
   }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: transparent;
-    border-radius: 5px; /* Radio de borde del dedo de la barra de desplazamiento */
-  }
-}
-
-.horizontal-scroll-container {
-  position: relative;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
 }
 
 .projects-center-container {
-  width: 90%;
+  margin: 0 auto;
+  margin-top: 5vh;
+  width: 80%;
+  height: 85%;
   display: flex;
-  flex-wrap: nowrap;
-  column-gap: 2%;
-  margin-top: 2%;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-}
+  border-radius: 30px;
+  background: rgb(9,13,14);
+  background-color:#ffff;
+  box-shadow: 4px 8px 16px lightgray;
 
-.arrows-left {
-  height: 80px;
-  width: 80px;
-  position: absolute;
-  top: 40%;
-  left: 0;
-  svg {
-    height: 80px;
-    width: 80px;
+
+  .projects-internal-center-container {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h4 {
+      width: 80%;
+      margin-bottom: 3vh;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: $cfDev_textPrimaryColor;;
+    }
+
+    ::-webkit-scrollbar {
+      width: 4px; /* Ancho de la barra de desplazamiento */
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: $cfDev_textPrimaryColor;
+      border-radius: 5px; /* Radio de borde del dedo de la barra de desplazamiento */
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: transparent; /* Color de fondo de la pista de la barra de desplazamiento */
+    }
+
+    ::-webkit-scrollbar-corner {
+      background-color: red;
+      width: 20px;
+      height: 20px;
+    }
+    .projects-list {
+      width: 80%;
+      margin-right: 2%;
+      max-height: 80%;
+      height: fit-content;
+      border-bottom: solid gray 2px;
+      overflow-y: scroll;
+      color: $backgroun_color4;
+      .projet-item-container {
+        width: 100%;
+        height: 10vh;
+        border-top: solid gray 2px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 1.7rem;
+        padding-left: 2%;
+        cursor: pointer;
+
+        > p {
+          font-size: 1.3rem;
+          font-weight: lighter;
+          color: gray;
+        }
+        &:hover {
+          color: $cfDev_textPrimaryColor;;
+        }
+      }
+    }
+    .projects-list-focus {
+      background-color: rgba($color: $cfDev_textPrimaryColor, $alpha: 0.15);
+      color: $cfDev_textPrimaryColor;;
+    }
+  }
+
+  .projects-internal-center-container.right {
+    width: 60%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > .image-container {
+     
+      height: 55%;
+    width: 80%;
+      border-radius: 15px;
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        height: 100%;
+      width: 100%;
+        border-radius: 15px;
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        opacity: 0;
+        transform: translateX(100%); // Imagen que entra desde la derecha
+      }
+
+      .active {
+        opacity: 1;
+        transform: translateX(0); // Imagen visible
+      }
+
+      .exiting {
+        opacity: 0;
+        transform: translateX(100%); // Imagen que sale hacia la izquierda
+      }
+    }
+    .image-container-mobile{
+      height: 85%;
+      width: 30%;
+    }
+
+    .arrow-button {
+      position: absolute;
+      background-color: transparent;
+      border: none;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      font-size: 2.5rem;
+      padding: 1.5%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color:$cfDev_primaryColor;
+
+      &:hover {
+        background-color: rgba($color: gray, $alpha: 0.2);
+      }
+    }
+
+    /* Específicas para el botón izquierdo */
+    .left-button {
+      left: 2%;
+    }
+
+    /* Específicas para el botón derecho */
+    .right-button {
+      right: 2%;
+    }
+
+    > .button-container {
+      position: absolute;
+      bottom: 5%;
+      right: 10%;
+      width: 70%;
+      display: flex;
+      justify-content: end;
+ 
+
+      > button {
+        font-size: 1.5rem;
+        background-color: transparent;
+        border: none;
+        padding: 2%;
+        color:$cfDev_textPrimaryColor;;
+        border-radius: 15px;
+        border: solid 2px $cfDev_textPrimaryColor;;
+        &:hover {
+          color: $cfDev_primaryColor;
+         border-color: $cfDev_primaryColor;
+        }
+      }
+    }
+
+    > .bullet-container {
+      margin-top: 2vh;
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      column-gap: 2rem;
+
+      .bullet {
+        height: 8px;
+        width: 8px;
+        border-radius: 50%;
+        background-color: rgba($color: gray, $alpha: 0.4);
+      }
+
+      .bullet-focus {
+        height: 7px;
+        width: 7px;
+        border-radius: 50%;
+        background-color:$cfDev_textPrimaryColor;
+      }
+    }
   }
 }
 
-.arrows-right {
-  height: 80px;
-  width: 80px;
-  position: absolute;
-  top: 40%;
-  right: 0;
-  svg {
-    height: 80px;
-    width: 80px;
+
+
+@media screen and (max-width:678px) {
+  .projects-container {
+    min-width: 100vw;
+    min-height: 100vh;
+    height: auto;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    > h3 {
+      font-family: $cfDev_primaryFont;
+      font-size: 3rem;
+      font-weight: 600;
+      text-align: center;
+      margin-left:0;
+      margin-bottom: 2vh;
+    }
   }
+  
+  .projects-center-container {
+    margin: 0 auto;
+    margin-top: 0vh;
+    width: 80%;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+
+  
+  
+    .projects-internal-center-container {
+      width: 100%;
+      height: 40vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+  
+      h4 {
+        width: 80%;
+        margin-bottom: 3vh;
+        font-size: 1.6rem;
+        font-weight: 400;
+        text-align: center;
+        margin-top: 3vh;
+      }
+  
+  
+      .projects-list {
+        width: 80%;
+        margin-right: 2%;
+        max-height: 100%;
+        height: fit-content;
+        border-bottom: solid gray 2px;
+        overflow-y: scroll;
+        .projet-item-container {
+          width: 100%;
+          height: 7vh;
+          border-top: solid gray 2px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          font-size: 1.7rem;
+          padding-left: 2%;
+          cursor: pointer;
+  
+          > p {
+            font-size: 1.3rem;
+            font-weight: lighter;
+          }
+          &:hover {
+            color: $cfDev_textPrimaryColor;
+          }
+        }
+      }
+      .projects-list-focus {
+        background-color: rgba($color: $cfDev_textPrimaryColor, $alpha: 0.15);
+        color: $cfDev_textPrimaryColor;
+      }
+    }
+  
+    .projects-internal-center-container.right {
+      width: 100%;
+      min-height: 60vh;
+      height: auto;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      > .image-container {
+       
+    height: 72vh;
+        width:80%;
+        border-radius: 15px;
+     
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          object-fit: cover;
+          height: 100%;
+        width: 100%;
+          border-radius: 15px;
+          transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+          opacity: 0;
+          transform: translateX(100%); // Imagen que entra desde la derecha
+        }
+  
+        .active {
+          opacity: 1;
+          transform: translateX(0); // Imagen visible
+        }
+  
+        .exiting {
+          opacity: 0;
+          transform: translateX(100%); // Imagen que sale hacia la izquierda
+        }
+      }
+      .image-container-mobile{
+        height: 72vh;
+        width:80%;
+      }
+  
+      .arrow-button {
+        position: absolute;
+        background-color: transparent;
+        border: none;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        font-size: 2.5rem;
+        padding: 1.5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color:$cfDev_textPrimaryColor;
+  
+        &:hover {
+          background-color: rgba($color: gray, $alpha: 0.2);
+        }
+      }
+  
+      /* Específicas para el botón izquierdo */
+      .left-button {
+        left: -1%;
+      }
+  
+      /* Específicas para el botón derecho */
+      .right-button {
+        right: -1%;
+      }
+  
+      > .button-container {
+        position: relative;
+        bottom: 1%;
+        right: 0%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+  
+        > button {
+          font-size: 1.5rem;
+          background-color: transparent;
+          border: none;
+          padding: 2%;
+          color: $cfDev_textPrimaryColor;
+          border-radius: 15px;
+          border: solid 1px $cfDev_textPrimaryColor;
+          &:hover {
+            color: $cfDev_textPrimaryColor;
+          }
+        }
+      }
+  
+      > .bullet-container {
+        margin-top: 2vh;
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        column-gap: 2rem;
+  
+        .bullet {
+          height: 8px;
+          width: 8px;
+          border-radius: 50%;
+          background-color: rgba($color: gray, $alpha: 0.4);
+        }
+  
+        >.bullet-focus {
+          height: 7px;
+          width: 7px;
+          border-radius: 50%;
+          background-color:$cfDev_textPrimaryColor;
+        }
+      }
+    }
+  }
+
+
 }
