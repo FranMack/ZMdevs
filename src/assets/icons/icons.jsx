@@ -14,7 +14,7 @@ const linkedin = <FaLinkedinIn title="Linkedin" />;
 const instagram = <FaInstagram title="Instagram" />;
 
 export const socialMedia = [
-  { icon: email, link: "mailto:info@zmdevs.com", text: "info@zmdevs.com" },
+  { icon: email, link: "mailto:carlos@zmdevs.com", text: "carlos@zmdevs.com" },
   {
     icon: phone,
     link: "https://wa.me/5493425906598",
