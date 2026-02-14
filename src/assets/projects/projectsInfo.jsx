@@ -34,6 +34,13 @@ import sharepass1 from "./sharepass/sharepass1.webp"
 import sharepass2 from "./sharepass/sharepass2.webp"
 import sharepass3 from "./sharepass/sharepass3.webp"
 
+import battersea1 from "./battersea/battersea1.webp"
+import battersea2 from "./battersea/battersea2.webp"
+import battersea3 from "./battersea/battersea3.webp"
+import batterseaMobile1 from "./battersea/mobile/battersea1.webp"
+import batterseaMobile2 from "./battersea/mobile/battersea2.webp"
+import batterseaMobile3 from "./battersea/mobile/battersea3.webp"
+
 export const projectsInfo=[
     {name:"Lovelia",
         type:"Web app",
@@ -58,12 +65,17 @@ export const projectsInfo=[
     },
 
     {name:"Sharepass",
-        type:"Mobile app",
+        type:"Web & Mobile app",
         image:sharepassImage,
-        link:"https://apps.apple.com/es/app/sharepass/id1627340541",
+        link:"https://sharepass.com/",
         carrousel:[sharepass1,sharepass2,sharepass3],
         mobileCarrousel:[sharepass1,sharepass2,sharepass3],
     },
-    
-
+    {name:"Battersea House",
+        type:"Landing Page",
+        image:battersea1,
+        link:"https://batterseahouse.co.uk/",
+        carrousel:[battersea1,battersea2,battersea3],
+        mobileCarrousel:[batterseaMobile1,batterseaMobile2,batterseaMobile3],
+    },
 ]
