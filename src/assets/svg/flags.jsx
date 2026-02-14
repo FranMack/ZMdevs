@@ -1,4 +1,4 @@
-export function SpainFlag({t}) {
+export function ArgentinaFlag({t}) {
 	return (
 
 		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icons-ar" viewBox="0 0 512 512">
@@ -41,7 +41,7 @@ export function SpainFlag({t}) {
   }
 
 
-  export function UKflag() {
+  export function USAFlag() {
 	return (
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-us" viewBox="0 0 512 512">
   <path fill="#bd3d44" d="M0 0h512v512H0"/>

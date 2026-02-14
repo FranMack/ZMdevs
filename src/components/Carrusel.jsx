@@ -10,9 +10,9 @@ function Carrusel({refHeader}) {
 
   const listRef = useRef();
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [scrollPosition,setScrolPosition]=useState(1)
-  const [carruselTopPosition,setcarruselTopPosition]=useState(0)
-  const [carruselBottonPosition,setcarruselBottonPosition]=useState(0)
+  const [scrollPosition,setScrollPosition]=useState(1)
+  const [carruselTopPosition,setCarruselTopPosition]=useState(0)
+  const [carruselBottomPosition,setCarruselBottomPosition]=useState(0)
 
 
   
@@ -20,11 +20,13 @@ function Carrusel({refHeader}) {
 
   
 
-  const handleScrollPosition=()=>{
-    setScrolPosition(window.scrollY)
-  }
-
-  window.addEventListener("scroll",handleScrollPosition)
+  useEffect(() => {
+    const handleScrollPosition = () => {
+      setScrollPosition(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScrollPosition);
+    return () => window.removeEventListener("scroll", handleScrollPosition);
+  }, []);
 
 
   useEffect(() => {
@@ -35,7 +37,7 @@ function Carrusel({refHeader}) {
     
 
 
-    if (imgNode && scrollPosition<carruselBottonPosition && scrollPosition>carruselTopPosition ) {
+    if (imgNode && scrollPosition<carruselBottomPosition && scrollPosition>carruselTopPosition ) {
       imgNode.scrollIntoView({
         behavior: "smooth",
         block: "nearest",
@@ -68,9 +70,9 @@ function Carrusel({refHeader}) {
     const carrusel=document.querySelector(".carrusel-slider")
     const carruselTopPosition=carrusel.scrollHeight
   
-    const carruselBottonPosition=carrusel.scrollHeight+carrusel.clientHeight
-    setcarruselTopPosition(carruselTopPosition);
-    setcarruselBottonPosition(carruselBottonPosition)
+    const carruselBottomPosition=carrusel.scrollHeight+carrusel.clientHeight
+    setCarruselTopPosition(carruselTopPosition);
+    setCarruselBottomPosition(carruselBottomPosition)
 
 
     setCurrentIndex(1)
@@ -79,7 +81,7 @@ function Carrusel({refHeader}) {
       const finalSlide = infoCarrusel.length - 1;
 
       
-      if ( scrollPosition<carruselBottonPosition && scrollPosition>carruselTopPosition ){
+      if ( scrollPosition<carruselBottomPosition && scrollPosition>carruselTopPosition ){
       setCurrentIndex(curr => {
         if (curr < finalSlide) {
           return curr + 1;

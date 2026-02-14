@@ -2,7 +2,7 @@ import { ExitIcon,socialMedia } from "../assets/icons/icons";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { LanguageContext } from "../context/";
-import { SpainFlag,UKflag } from "../assets/svg/flags";
+import { ArgentinaFlag, USAFlag } from "../assets/svg/flags";
 function MobileMenu({scrollHandler,itemsNavbar,handleShowMobileMenu,refMobileMenu}){
   const { language, toggleLanguage } = useContext(LanguageContext);
     return(<>
@@ -18,10 +18,10 @@ function MobileMenu({scrollHandler,itemsNavbar,handleShowMobileMenu,refMobileMen
 
 < li className="flag-mobile-container">
             <div onClick={toggleLanguage} className={language==="spanish"? "flag-mobile flag-mobile-focus":"flag-mobile"}>
-              <SpainFlag />
+              <ArgentinaFlag />
             </div>
             <div onClick={toggleLanguage} className={language==="english"? "flag-mobile flag-mobile-focus":"flag-mobile"}>
-              <UKflag />
+              <USAFlag />
             </div>
           </li>
          

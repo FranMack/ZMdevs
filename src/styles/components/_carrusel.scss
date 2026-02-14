@@ -1,5 +1,3 @@
-@import "../variables";
-
 .seccion-carrusel{
   position: relative;
   text-align: center;
@@ -7,7 +5,7 @@
   justify-content: center;
     min-width: 100vw;
     height: 50vh;
-    background-color: $backgroun_color1;
+    background-color: $background_color1;
     color:white;
     ::-webkit-scrollbar-thumb {
       background-color: transparent;

@@ -9,7 +9,7 @@ import { LanguageContext } from "../context";
 
 function Contact({ refContact }) {
   const { language } = useContext(LanguageContext);
-  const singUpForm = useFormik({
+  const signUpForm = useFormik({
     initialValues: {
       name: "",
       subject: "",
@@ -36,7 +36,7 @@ function Contact({ refContact }) {
         })
         .then((response) => {
           console.log(response.data);
-          singUpForm.resetForm();
+          signUpForm.resetForm();
           handleMensajeEnviado();
         })
         .catch((error) => {
@@ -108,7 +108,7 @@ function Contact({ refContact }) {
           <form
             className="contact-form"
             action="submit"
-            onSubmit={singUpForm.handleSubmit}
+            onSubmit={signUpForm.handleSubmit}
           >
             <label htmlFor="name">
               {language === "spanish" ? "NOMBRE" : "NAME"}
@@ -117,18 +117,18 @@ function Contact({ refContact }) {
               type="text"
               id="name"
               className={`${
-                singUpForm.errors.name &&
-                singUpForm.touched.name &&
+                signUpForm.errors.name &&
+                signUpForm.touched.name &&
                 "input-warning"
               }`}
-              value={singUpForm.values.name}
-              onChange={singUpForm.handleChange}
-              onBlur={singUpForm.handleBlur}
+              value={signUpForm.values.name}
+              onChange={signUpForm.handleChange}
+              onBlur={signUpForm.handleBlur}
             />
             <p className="form-warning">
-              {singUpForm.errors.name &&
-                singUpForm.touched.name &&
-                singUpForm.errors.name}
+              {signUpForm.errors.name &&
+                signUpForm.touched.name &&
+                signUpForm.errors.name}
             </p>
             <label htmlFor="subject">
               {language === "spanish" ? "ASUNTO" : "SUBJECT"}
@@ -137,36 +137,36 @@ function Contact({ refContact }) {
               type="text"
               id="subject"
               className={`${
-                singUpForm.errors.subject &&
-                singUpForm.touched.subject &&
+                signUpForm.errors.subject &&
+                signUpForm.touched.subject &&
                 "input-warning"
               }`}
-              value={singUpForm.values.subject}
-              onChange={singUpForm.handleChange}
-              onBlur={singUpForm.handleBlur}
+              value={signUpForm.values.subject}
+              onChange={signUpForm.handleChange}
+              onBlur={signUpForm.handleBlur}
             />
             <p className="form-warning">
-              {singUpForm.errors.subject &&
-                singUpForm.touched.subject &&
-                singUpForm.errors.subject}
+              {signUpForm.errors.subject &&
+                signUpForm.touched.subject &&
+                signUpForm.errors.subject}
             </p>
             <label htmlFor="email">EMAIL</label>
             <input
               type="text"
               id="email"
               className={`${
-                singUpForm.errors.email &&
-                singUpForm.touched.email &&
+                signUpForm.errors.email &&
+                signUpForm.touched.email &&
                 "input-warning"
               }`}
-              value={singUpForm.values.email}
-              onChange={singUpForm.handleChange}
-              onBlur={singUpForm.handleBlur}
+              value={signUpForm.values.email}
+              onChange={signUpForm.handleChange}
+              onBlur={signUpForm.handleBlur}
             />
             <p className="form-warning">
-              {singUpForm.errors.email &&
-                singUpForm.touched.email &&
-                singUpForm.errors.email}
+              {signUpForm.errors.email &&
+                signUpForm.touched.email &&
+                signUpForm.errors.email}
             </p>
             <label htmlFor="message">
               {language === "spanish" ? "MENSAJE" : "MESSAGE"}
@@ -177,18 +177,18 @@ function Contact({ refContact }) {
               cols="30"
               rows="10"
               className={`${
-                singUpForm.errors.message &&
-                singUpForm.touched.message &&
+                signUpForm.errors.message &&
+                signUpForm.touched.message &&
                 "input-warning"
               }`}
-              value={singUpForm.values.message}
-              onChange={singUpForm.handleChange}
-              onBlur={singUpForm.handleBlur}
+              value={signUpForm.values.message}
+              onChange={signUpForm.handleChange}
+              onBlur={signUpForm.handleBlur}
             />
             <p className="form-warning">
-              {singUpForm.errors.message &&
-                singUpForm.touched.message &&
-                singUpForm.errors.message}
+              {signUpForm.errors.message &&
+                signUpForm.touched.message &&
+                signUpForm.errors.message}
             </p>
 
             <button type="submit">

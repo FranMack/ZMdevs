@@ -1,26 +1,24 @@
-@import "../variables";
-
 .contact-container {
  
   padding-top: 10vh;
   padding-bottom: 15vh;
   width: 100vw;
-  background-color: $backgroun_color1;
+  background-color: $background_color1;
   font-family: $cfDev_primaryFont;
-  color: $cfDev_textTerciaryColor;
+  color: $cfDev_textTertiaryColor;
   h3 {
     font-size: 3rem;
     font-weight: 600;
     font-family: $cfDev_primaryFont;
-    color: $backgroun_color5;
+    color: $background_color5;
     margin-left: 10%;
   }
   h4 {
-    color: $cfDev_textTerciaryColor;
+    color: $cfDev_textTertiaryColor;
   }
 
   p {
-    color: $backgroun_color5;
+    color: $background_color5;
   }
 }
 
@@ -85,7 +83,7 @@
 
   button {
     background-color: $cfDev_textPrimaryColor;
-    color: $backgroun_color5;
+    color: $background_color5;
     width: 100%;
     height: 10%;
     text-align: center;
@@ -115,7 +113,7 @@
 
   p {
     font-size: 1.7rem;
-    color: $backgroun_color5;
+    color: $background_color5;
   }
 
   .social-media-icons {
@@ -178,7 +176,7 @@
   }
   p {
     font-size: 1.7rem;
-    color: $cfDev_textTerciaryColor;
+    color: $cfDev_textTertiaryColor;
     text-align: center;
   }
 

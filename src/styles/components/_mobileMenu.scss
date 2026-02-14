@@ -1,13 +1,10 @@
-@import "../variables";
-
-
 .mobile-menu-container{
     position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: $backgroun_color1;
-    color:$backgroun_color2;
+    background-color: $background_color1;
+    color:$background_color2;
     width: 50vw;
     height: 100vh;
     z-index: 50;

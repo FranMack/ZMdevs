@@ -1,22 +1,20 @@
-@import "./views/header";
-@import "./views/header2";
 @import "./variables";
-@import "./components//navbar";
-@import "./views//aboutUs";
-@import "./views//aboutUs2";
+@import "./views/header";
+@import "./views/aboutUs";
+@import "./components/navbar";
 @import "./components/footer";
 @import "./views/services";
 @import "./views/contact";
-@import"./components/servicesCard";
-@import"./components/projectCard";
-@import"./views/projects";
-@import"./components//carrusel";
-@import"./views/clients";
+@import "./components/servicesCard";
+@import "./components/projectCard";
+@import "./views/projects";
+@import "./components/carrusel";
+@import "./views/clients";
 @import "./components/mobileNavbar";
 @import "./components/mobileMenu";
 @import "./components/popUp";
-@import "./components//whatsUpContacts";
-@import "./components/whatsUpButton";
+@import "./components/whatsAppContacts";
+@import "./components/whatsAppButton";
 
 
 
@@ -34,7 +32,7 @@ html{
 body{
     overflow-x: hidden;
     font-family: $cfDev_primaryFont;
-    background-color: $backgroun_color3;
+    background-color: $background_color3;
 }
 
 
@@ -48,7 +46,7 @@ body{
   }
 
   ::-webkit-scrollbar-track {
-    background-color:$backgroun_color3; /* Color de fondo de la pista de la barra de desplazamiento */
+    background-color:$background_color3; /* Color de fondo de la pista de la barra de desplazamiento */
     
   }
 

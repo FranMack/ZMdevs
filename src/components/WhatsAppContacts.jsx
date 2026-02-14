@@ -1,5 +1,5 @@
-import cocoPicture from "../assets/images/coco_profile.png";
-import franPicture from "../assets/images/fran_profile.png";
+import cocoPicture from "../assets/images/cocoProfile.png";
+import franPicture from "../assets/images/franProfile.png";
 import { useContext } from "react";
 import { LanguageContext } from "../context";
 
@@ -25,7 +25,7 @@ export function CloseIcon({ onClick }) {
   );
 }
 
-export function WhatsUpContacts({ handleWhatsUp,openWhatsUp }) {
+export function WhatsAppContacts({ handleWhatsApp,openWhatsApp }) {
 
   const { language } = useContext(LanguageContext);
   const linkCoco = () => {
@@ -37,26 +37,26 @@ export function WhatsUpContacts({ handleWhatsUp,openWhatsUp }) {
     window.open('https://wa.me/5493424456154', '_blank');
   };
   return (
-    <div className={`whats-up-contacts-container ${openWhatsUp ? "active-whats-up":""}`}>
+    <div className={`whatsapp-contacts-container ${openWhatsApp ? "active-whatsapp":""}`}>
       <div className="auxiliar-close-icon">
-        <CloseIcon onClick={handleWhatsUp} />
+        <CloseIcon onClick={handleWhatsApp} />
       </div>
       <h5>{language==="spanish" ?"Horario de Atención: Lun a Vie de 8 a 17hs y Sáb de 8 a 12hs.":"Opening Hours: Mon to Fri from 8 a.m. to 5 p.m. and Sat from 8 a.m. to 12 p.m. (ARG)."}</h5>
 
-      <div onClick={linkCoco} className="whats-up-card">
-        <div className="whats-up-card-image-container">
+      <div onClick={linkCoco} className="whatsapp-card">
+        <div className="whatsapp-card-image-container">
           <img src={cocoPicture} alt="Carlos" />
         </div>
-        <div className="whats-up-card-info-container">
+        <div className="whatsapp-card-info-container">
           <h4>Carlos</h4>
           <p>{language==="spanish" ? "Enviar mensaje":"Send Message"}</p>
         </div>
       </div>
-      <div onClick={linkFran} className="whats-up-card">
-        <div className="whats-up-card-image-container">
+      <div onClick={linkFran} className="whatsapp-card">
+        <div className="whatsapp-card-image-container">
           <img src={franPicture} alt="Carlos" />
         </div>
-        <div className="whats-up-card-info-container">
+        <div className="whatsapp-card-info-container">
           <h4>Francisco</h4>
           <p>{language==="spanish" ? "Enviar mensaje":"Send Message"}</p>
         </div>

@@ -1,5 +1,5 @@
 import {HamburguerMenu} from "../assets/icons/icons"
-import logo from "../assets/images/l9.png"
+import logo from "../assets/images/logoMobile.png"
 
 function MobileNavbar({handleShowMobileMenu}){
 

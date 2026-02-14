@@ -4,13 +4,13 @@ import Footer from "./components/Footer";
 import MobileMenu from "./components/MobileMenu";
 import MobileNavbar from "./components/MobileNavbar";
 import Navbar from "./components/Navbar";
-import { WhatsUpButton } from "./components/WhatsUpButton";
-import { WhatsUpContacts } from "./components/WhatsUpContacts";
-import { ScreenSizeContext } from "./context/screenSize.context";
-import { AboutUs2 } from "./views/AboutUs2";
+import { WhatsAppButton } from "./components/WhatsAppButton";
+import { WhatsAppContacts } from "./components/WhatsAppContacts";
+import { ScreenSizeContext } from "./context/screenSizeContext";
+import { AboutUs } from "./views/AboutUs";
 import Clients from "./views/Clients";
 import Contact from "./views/Contact";
-import Header2 from "./views/Header2";
+import Header from "./views/Header";
 import Projects from "./views/Projects";
 import Services from "./views/Services";
 
@@ -20,11 +20,11 @@ function App() {
   //referencias
   const refHeader = useRef();
   const refAboutUs = useRef();
-  const refAboutUsTitle=useRef()
-  const refAboutUsParagraph=useRef()
+  const refAboutUsTitle = useRef();
+  const refAboutUsParagraph = useRef();
   const refServices = useRef();
   const refClients = useRef();
-  const refProjects=useRef();
+  const refProjects = useRef();
   const refContact = useRef();
   const refMobileMenu = useRef();
 
@@ -46,21 +46,19 @@ function App() {
     { nameEnglish: "Contact", nameSpanish: "Contacto", ref: refContact },
   ];
 
-  window.addEventListener("scroll", scrollHandler2);
-
   function scrollHandler2() {
     const triggerBottom = window.innerHeight * 0.9;
-    const aboutTitle = refAboutUsTitle?.current
-    const aboutParagraph=refAboutUsParagraph?.current
+    const aboutTitle = refAboutUsTitle?.current;
+    const aboutParagraph = refAboutUsParagraph?.current;
 
     const servicesCards =
       refServices?.current?.querySelectorAll(".service-card");
     /*const projectsCards = refProjects.current.querySelectorAll(".project-card");*/
     const socialMedia = refContact?.current?.querySelector(
-      ".contact-social-media"
+      ".contact-social-media",
     );
 
-    const projects=refProjects?.current;
+    const projects = refProjects?.current;
     const contactForm = refContact?.current?.querySelector(".contact-form");
 
     if (aboutTitle) {
@@ -86,8 +84,6 @@ function App() {
         aboutParagraph.classList.remove("efectoReveal");
       }
     }
-
-
 
     servicesCards?.forEach((card, i) => {
       const cardTop = card.getBoundingClientRect().top;
@@ -132,7 +128,6 @@ function App() {
         socialMedia.classList.remove("efectoReveal");
       }
     }
-
 
     if (projects) {
       const topCoordinates = projects.getBoundingClientRect().top;
@@ -196,16 +191,18 @@ function App() {
   useEffect(() => {
     window.addEventListener("resize", handleScreenWidth);
     window.addEventListener("click", handleExitMenu);
+    window.addEventListener("scroll", scrollHandler2);
     return () => {
+      window.removeEventListener("resize", handleScreenWidth);
       window.removeEventListener("click", handleExitMenu);
-      window.addEventListener("resize", handleScreenWidth);
+      window.removeEventListener("scroll", scrollHandler2);
     };
   }, [showMobileMenu]);
 
-  const [openWhatsUp, setOpenWhatsUp] = useState(false);
+  const [openWhatsApp, setOpenWhatsApp] = useState(false);
 
-  const handleWhatsUp = () => {
-    setOpenWhatsUp(!openWhatsUp);
+  const handleWhatsApp = () => {
+    setOpenWhatsApp(!openWhatsApp);
   };
 
   return (
@@ -222,13 +219,25 @@ function App() {
         handleShowMobileMenu={handleShowMobileMenu}
       />
       <main>
-        {!openWhatsUp && <WhatsUpButton handleWhatsUp={handleWhatsUp} openWhatsUp={openWhatsUp} />}
-        <WhatsUpContacts handleWhatsUp={handleWhatsUp} openWhatsUp={openWhatsUp} />
-        <Header2 windowSize={screenWidth} refHeader={refHeader} />
+        {!openWhatsApp && (
+          <WhatsAppButton
+            handleWhatsApp={handleWhatsApp}
+            openWhatsApp={openWhatsApp}
+          />
+        )}
+        <WhatsAppContacts
+          handleWhatsApp={handleWhatsApp}
+          openWhatsApp={openWhatsApp}
+        />
+        <Header windowSize={screenWidth} refHeader={refHeader} />
         <Services refServices={refServices} />
         <Clients refClients={refClients} />
         <Projects refProjects={refProjects} />
-        <AboutUs2 refAboutUs={refAboutUs}  refAboutUsTitle={refAboutUsTitle} refAboutUsParagraph={refAboutUsParagraph}/>
+        <AboutUs
+          refAboutUs={refAboutUs}
+          refAboutUsTitle={refAboutUsTitle}
+          refAboutUsParagraph={refAboutUsParagraph}
+        />
         <Contact refContact={refContact} />
       </main>
       <Footer />

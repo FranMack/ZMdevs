@@ -1,6 +1,4 @@
-@import "../variables";
-
-.whats-up-contacts-container{
+.whatsapp-contacts-container{
 
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     opacity: 0;
@@ -27,14 +25,14 @@ transform: translateX(200%);
     h5{
         font-size: 1.35rem;
         font-weight: 600;
-        color:$cfDev_textTerciaryColor;
+        color:$cfDev_textTertiaryColor;
        
         margin-left: 5%;
         margin-right: 5%;
     }
 }
 
-.whats-up-card{
+.whatsapp-card{
     width: 90%;
     height: 15vh;
     display: flex;
@@ -46,7 +44,7 @@ transform: translateX(200%);
     cursor: pointer;
 
  
-    .whats-up-card-image-container{
+    .whatsapp-card-image-container{
         height: 70%;
         aspect-ratio: 1;
         border-radius: 50%;
@@ -56,12 +54,12 @@ transform: translateX(200%);
       object-fit: cover;
       border-radius: 50%;
       margin-left: 10%;
-      background: $backgroun_color2;
+      background: $background_color2;
 
 
     }
 
-    .whats-up-card-info-container{
+    .whatsapp-card-info-container{
         h4{
             font-size: 2rem;
             font-weight: 600;
@@ -76,27 +74,27 @@ transform: translateX(200%);
 
 
 
-.button-whats-up-out{
+.button-whatsapp-out{
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     opacity: 0;
 }
 
 
-.active-whats-up{
+.active-whatsapp{
     opacity: 1;
     transform: translateX(0%);
 }
 
 @media screen and (max-width: 1024px) {
  
-    .whats-up-contacts-container{
+    .whatsapp-contacts-container{
         width: 50%;
     }
   }
 
 @media screen and (max-width: 678px) {
  
-    .whats-up-contacts-container{
+    .whatsapp-contacts-container{
         width: 90%;
     }
   }

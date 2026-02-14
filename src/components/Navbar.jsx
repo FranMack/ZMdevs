@@ -1,17 +1,19 @@
-import { useContext, useState } from "react";
-import logoBlanco from "../assets/images/l8.png";
+import { useContext, useEffect, useState } from "react";
+import logoBlanco from "../assets/images/logoWhite.png";
 import logoColor from "../assets/images/zmdevsCortoGradiente.png";
-import { SpainFlag, UKflag } from "../assets/svg/flags";
+import { ArgentinaFlag, USAFlag } from "../assets/svg/flags";
 import { LanguageContext } from "../context/languageContext";
 
 function Navbar({ scrollHandler, itemsNavbar }) {
-  const [scrollPosition, setScrolPosition] = useState(0);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
-  function sizeHandler() {
-    setScrolPosition(window.scrollY);
-  }
-
-  window.addEventListener("scroll", sizeHandler);
+  useEffect(() => {
+    function sizeHandler() {
+      setScrollPosition(window.scrollY);
+    }
+    window.addEventListener("scroll", sizeHandler);
+    return () => window.removeEventListener("scroll", sizeHandler);
+  }, []);
 
   const { language, toggleLanguage } = useContext(LanguageContext);
 
@@ -52,13 +54,13 @@ function Navbar({ scrollHandler, itemsNavbar }) {
               onClick={toggleLanguage}
               className={language === "spanish" ? "flag flag-focus" : "flag"}
             >
-              <SpainFlag />
+              <ArgentinaFlag />
             </div>
             <div
               onClick={toggleLanguage}
               className={language === "english" ? "flag flag-focus" : "flag"}
             >
-              <UKflag />
+              <USAFlag />
             </div>
           </li>
         </ul>

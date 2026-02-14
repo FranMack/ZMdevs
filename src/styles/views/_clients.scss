@@ -1,8 +1,6 @@
-@import "../variables";
-
 .clients-container {
   min-width: 100vw;
-  background-color: $backgroun_color2;
+  background-color: $background_color2;
   color: $cfDev_textPrimaryColor;
   font-family: $cfDev_primaryFont;
   padding-top: 2vh;
@@ -26,7 +24,7 @@
   grid-template-columns: repeat(4, 15vw);
   justify-content: space-between;
   gap: 40px;
-  background-color: $backgroun_color2;
+  background-color: $background_color2;
 }
 
 .client-card {

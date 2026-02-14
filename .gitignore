@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .codegpt
+
+# Brand assets (logos, manual de marca)
+brand/

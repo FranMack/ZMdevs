@@ -1,8 +1,7 @@
-@import "../variables";
 .project-card{
     height: 60vh;
     width: 20vw;
-    background-color:$backgroun_color3;
+    background-color:$background_color3;
     border:solid 4px;
     border-color: $cfDev_primaryColor;
     
@@ -30,7 +29,7 @@
         text-align: center;
         margin-left: 5%;
         margin-right: 5%;
-        color: $cfDev_textTerciaryColor
+        color: $cfDev_textTertiaryColor
       
 
     }

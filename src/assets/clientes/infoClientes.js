@@ -5,7 +5,7 @@ import imagenFortres from"./fortres.png";
 
 export const infoClientes = [
   {
-    name: "Forertres",
+    name: "Fortres",
     image: imagenFortres,
   },
   {

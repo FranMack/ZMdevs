@@ -1,2 +1,2 @@
 export * from "./languageContext";
-export * from "./screenSize.context";
+export * from "./screenSizeContext";
