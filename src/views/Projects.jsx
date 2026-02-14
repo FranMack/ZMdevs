@@ -1,9 +1,12 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { arrows } from "../assets/icons/icons";
 import { projectsInfo } from "../assets/projects/projectsInfo";
-import { LanguageContext, ScreenSizeContext } from "../context/";
+import { useTranslation } from "../hooks/useTranslation";
+import { ScreenSizeContext } from "../context/";
+import { useContext } from "react";
+
 function Projects({ refProjects }) {
-  const { language } = useContext(LanguageContext);
+  const { t } = useTranslation();
   const [projectIndex, setProjectIndex] = useState(0);
 
   const handleProjectIndex = (index) => {
@@ -56,16 +59,14 @@ function Projects({ refProjects }) {
   return (
     <section className="projects-container">
       <h3 className="projects-section-title">
-        {language === "spanish" ? "Nuestros trabajos" : "Our works"}
+        {t("projects.title")}
       </h3>
 
       <div ref={refProjects} className="projects-center-container">
         <div className="projects-internal-center-container">
-          <h4>
-            {language === "spanish"
-              ? " Algunos de nuestros projectos"
-              : "Some of our projects"}
-          </h4>
+          {/* <h4>
+            {t("projects.subtitle")}
+          </h4> */}
           <ul className="projects-list">
             {projectsInfo.map((project, i) => {
               return (
@@ -88,7 +89,7 @@ function Projects({ refProjects }) {
         <div className="projects-internal-center-container right">
           <div
             className={`image-container ${
-              projectIndex % 2 !== 0 ? "image-container-mobile" : ""
+              projectsInfo[projectIndex].type === "Mobile app" ? "image-container-mobile" : ""
             }`}
           >
             {screenWidth > 680
@@ -112,7 +113,7 @@ function Projects({ refProjects }) {
                     src={image}
                     alt={`Proyecto ${i}`}
                     className={`
-                 
+
                   ${
                     carrouselIndex === i
                       ? isAnimating
@@ -143,7 +144,7 @@ function Projects({ refProjects }) {
           </button>
           <div className="button-container">
             <button onClick={() => linkTo(projectsInfo[projectIndex].link)}>
-              {language === "spanish" ? "Visitar Sitio" : "Visit Site"}
+              {t("projects.visitSite")}
             </button>
           </div>
         </div>

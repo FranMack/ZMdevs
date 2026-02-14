@@ -31,8 +31,9 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding-top: 5%;
 
     h4 {
       width: 80%;
@@ -65,13 +66,16 @@
       margin-right: 2%;
       max-height: 80%;
       height: fit-content;
-      border-bottom: solid gray 2px;
+      border-bottom: solid gray 1px;
       overflow-y: scroll;
       color: $background_color4;
       .projet-item-container {
         width: 100%;
         height: 10vh;
-        border-top: solid gray 2px;
+        border-top: solid gray 1px;
+        &:first-child {
+          border-top: none;
+        }
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -102,15 +106,17 @@
     justify-content: center;
     align-items: center;
     > .image-container {
-     
+
       height: 55%;
     width: 80%;
       border-radius: 15px;
+      position: relative;
+      overflow: hidden;
       img {
         position: absolute;
         top: 0;
         left: 0;
-        object-fit: cover;
+        object-fit: contain;
         height: 100%;
       width: 100%;
         border-radius: 15px;
@@ -132,6 +138,8 @@
     .image-container-mobile{
       height: 85%;
       width: 30%;
+      position: relative;
+      overflow: hidden;
     }
 
     .arrow-button {
@@ -223,8 +231,7 @@
       font-family: $cfDev_primaryFont;
       font-size: 3rem;
       font-weight: 600;
-      text-align: center;
-      margin-left:0;
+      margin-left: 10%;
       margin-bottom: 2vh;
     }
   }
@@ -263,12 +270,15 @@
         margin-right: 2%;
         max-height: 100%;
         height: fit-content;
-        border-bottom: solid gray 2px;
+        border-bottom: solid gray 1px;
         overflow-y: scroll;
         .projet-item-container {
           width: 100%;
           height: 7vh;
-          border-top: solid gray 2px;
+          border-top: solid gray 1px;
+          &:first-child {
+            margin-top: 2vh;
+          }
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -300,9 +310,10 @@
       justify-content: center;
       align-items: center;
       > .image-container {
-       
-    height: 72vh;
-        width:80%;
+        position: relative;
+        overflow: hidden;
+        height: 72vh;
+        width: 80%;
         border-radius: 15px;
      
         img {
@@ -329,8 +340,10 @@
         }
       }
       .image-container-mobile{
+        position: relative;
+        overflow: hidden;
         height: 72vh;
-        width:80%;
+        width: 80%;
       }
   
       .arrow-button {

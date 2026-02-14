@@ -1,14 +1,13 @@
 import axios from "axios";
 import { useFormik } from "formik";
-import { useContext } from "react";
 import { Link } from "react-router-dom";
 import * as Yup from "yup";
 import { socialMedia } from "../assets/icons/icons";
 import PopUp from "../components/PopUp";
-import { LanguageContext } from "../context";
+import { useTranslation } from "../hooks/useTranslation";
 
 function Contact({ refContact }) {
-  const { language } = useContext(LanguageContext);
+  const { t } = useTranslation();
   const signUpForm = useFormik({
     initialValues: {
       name: "",
@@ -28,7 +27,7 @@ function Contact({ refContact }) {
 
     onSubmit: (values) => {
       axios
-        .post("https://formspree.io/f/mnnqgrqw", {
+        .post("https://formspree.io/f/mwvnookv", {
           name: values.name,
           subject: values.subject,
           email: values.email,
@@ -59,36 +58,19 @@ function Contact({ refContact }) {
   return (
     <section ref={refContact} className="contact-container">
       <h3 className="section-title-contact">
-        {language === "spanish" ? "Contacto" : "Contact"}
+        {t("contact.title")}
       </h3>
 
       <div className="contact-center-container">
         <PopUp />
         <div className="contact-internal-contain">
           <article className="contact-social-media">
-            <h4>
-              {language === "spanish"
-                ? "TRABAJEMOS JUNTOS"
-                : "LET'S WORK TOGETHER"}
-            </h4>
-            {language === "spanish" ? (
-              <>
-                <p>
-                  ¿Tenés una idea para un proyecto de software?
-                  <br />
-                  ¡Nos encantaría escucharlo! Cuéntanos los detalles y
-                  trabajaremos juntos para convertirlo en realidad.
-                </p>
-              </>
-            ) : (
-              <>
-                <p>
-                  Do you have an idea for a software project?
-                  <br /> We would love to hear it! Tell us the details and we
-                  will work together to make it happen.
-                </p>
-              </>
-            )}
+            <h4>{t("contact.workTogether")}</h4>
+            <p>
+              {t("contact.descriptionLine1")}
+              <br />
+              {t("contact.descriptionLine2")}
+            </p>
 
             <div className="social-media-icons">
               {socialMedia.map((media, i) => {
@@ -111,7 +93,7 @@ function Contact({ refContact }) {
             onSubmit={signUpForm.handleSubmit}
           >
             <label htmlFor="name">
-              {language === "spanish" ? "NOMBRE" : "NAME"}
+              {t("contact.name")}
             </label>
             <input
               type="text"
@@ -121,6 +103,7 @@ function Contact({ refContact }) {
                 signUpForm.touched.name &&
                 "input-warning"
               }`}
+              placeholder={t("contact.namePlaceholder")}
               value={signUpForm.values.name}
               onChange={signUpForm.handleChange}
               onBlur={signUpForm.handleBlur}
@@ -131,7 +114,7 @@ function Contact({ refContact }) {
                 signUpForm.errors.name}
             </p>
             <label htmlFor="subject">
-              {language === "spanish" ? "ASUNTO" : "SUBJECT"}
+              {t("contact.subject")}
             </label>
             <input
               type="text"
@@ -141,6 +124,7 @@ function Contact({ refContact }) {
                 signUpForm.touched.subject &&
                 "input-warning"
               }`}
+              placeholder={t("contact.subjectPlaceholder")}
               value={signUpForm.values.subject}
               onChange={signUpForm.handleChange}
               onBlur={signUpForm.handleBlur}
@@ -159,6 +143,7 @@ function Contact({ refContact }) {
                 signUpForm.touched.email &&
                 "input-warning"
               }`}
+              placeholder="email@example.com"
               value={signUpForm.values.email}
               onChange={signUpForm.handleChange}
               onBlur={signUpForm.handleBlur}
@@ -169,7 +154,7 @@ function Contact({ refContact }) {
                 signUpForm.errors.email}
             </p>
             <label htmlFor="message">
-              {language === "spanish" ? "MENSAJE" : "MESSAGE"}
+              {t("contact.message")}
             </label>
             <textarea
               name="message"
@@ -181,6 +166,7 @@ function Contact({ refContact }) {
                 signUpForm.touched.message &&
                 "input-warning"
               }`}
+              placeholder={t("contact.messagePlaceholder")}
               value={signUpForm.values.message}
               onChange={signUpForm.handleChange}
               onBlur={signUpForm.handleBlur}
@@ -192,7 +178,7 @@ function Contact({ refContact }) {
             </p>
 
             <button type="submit">
-              {language === "spanish" ? "ENVIAR" : "SEND"}
+              {t("contact.send")}
             </button>
           </form>
         </div>

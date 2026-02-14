@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { LanguageContext } from "../context/";
 import { ArgentinaFlag, USAFlag } from "../assets/svg/flags";
+import { useTranslation } from "../hooks/useTranslation";
+
 function MobileMenu({scrollHandler,itemsNavbar,handleShowMobileMenu,refMobileMenu}){
   const { language, toggleLanguage } = useContext(LanguageContext);
+  const { t } = useTranslation();
     return(<>
     <div ref={refMobileMenu} className="mobile-menu-container">
         <ExitIcon handleShowMobileMenu={handleShowMobileMenu}/>
@@ -13,7 +16,7 @@ function MobileMenu({scrollHandler,itemsNavbar,handleShowMobileMenu,refMobileMen
         <ul>
           {itemsNavbar.map((item, i) => {
             return <li onClick={()=>{scrollHandler(item.ref)}} key={i}>
-              {language==="spanish" ? item.nameSpanish :item.nameEnglish}</li>;
+              {t(item.nameKey)}</li>;
           })}
 
 < li className="flag-mobile-container">
@@ -24,10 +27,10 @@ function MobileMenu({scrollHandler,itemsNavbar,handleShowMobileMenu,refMobileMen
               <USAFlag />
             </div>
           </li>
-         
+
         </ul>
 
-      
+
       </div>
       <div className="mobile-menu-social-media">
 

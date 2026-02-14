@@ -39,11 +39,11 @@ function App() {
   };
 
   const itemsNavbar = [
-    { nameEnglish: "Home", nameSpanish: "Inicio", ref: refHeader },
-    { nameEnglish: "About us", nameSpanish: "Nosotros", ref: refAboutUs },
-    { nameEnglish: "Services", nameSpanish: "Servicios", ref: refServices },
-    { nameEnglish: "Clients", nameSpanish: "Clientes", ref: refClients },
-    { nameEnglish: "Contact", nameSpanish: "Contacto", ref: refContact },
+    { nameKey: "nav.home", ref: refHeader },
+    { nameKey: "nav.aboutUs", ref: refAboutUs },
+    { nameKey: "nav.services", ref: refServices },
+    { nameKey: "nav.clients", ref: refClients },
+    { nameKey: "nav.contact", ref: refContact },
   ];
 
   function scrollHandler2() {

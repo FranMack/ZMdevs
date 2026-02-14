@@ -7,30 +7,28 @@
   padding-top: 10vh;
   padding-bottom:10vh;
   h3 {
-    text-align: center;
     font-size: 3rem;
     font-weight: 600;
     color: $cfDev_textPrimaryColor;
     margin-bottom: 1rem;
+    margin-left: 10%;
   }
   >p{
-    margin:  0 auto;
-    width: 50%;
+    margin-left: 10%;
+    width: 80%;
     color: $cfDev_tertiaryColor;
     font-size: 1.6rem;
-    text-align: center;
   }
 }
 
 .services-center-container {
   padding-top: 4%;
-  margin: 0 auto;
-  width: 100%;
+  margin-left: 10%;
+  width: 80%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 20vw);
-  grid-template-rows: repeat(2, 25vw);;
-  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 18vw);
 
   gap: 30px;
 }
@@ -53,32 +51,26 @@
 @media screen and (max-width:678px) {
 
   .services-container {
-  
+
     h3 {
-      text-align: center;
       font-family: $cfDev_primaryFont;
       font-size: 3rem;
       font-weight: 600;
       margin-bottom: 1rem;
+      margin-left: 10%;
     }
     >p{
-     
+      margin-left: 10%;
       width: 80%;
       font-size: 1.6rem;
-      text-align: center;
     }
   }
-
-  .services-container { h3{
-    font-size: 3rem;
-    text-align: center;
-}}
   .services-center-container {
-    margin: 0 auto;
-    width: fit-content;
+    margin-left: 10%;
+    width: 80%;
     display: grid;
-    grid-template-columns: repeat(1, 80vw);
-    grid-template-rows: repeat(6, 80vw);;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 80vw);
     gap: 30px;
   }
 

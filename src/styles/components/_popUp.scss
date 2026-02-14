@@ -4,22 +4,27 @@
     justify-content: center;
     align-items: center;
     z-index: 50;
-width: 25vw;
-aspect-ratio: 2;
-background-color: $background_color3;
-border-radius: 12px;
-border:solid 3px $cfDev_primaryColor;
-transition: 2s ease-in;
-transform: translateX(600%);
-p{
-    font-size: 3rem;
+    width: 25vw;
+    padding: 20px 30px;
+    background-color: $background_color3;
+    border-radius: 12px;
+    border: solid 2px $cfDev_primaryColor;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    transform: translateX(600%);
+    opacity: 0;
 
-}
+    p{
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: $cfDev_textPrimaryColor;
+        text-align: center;
+    }
 }
 
 .popUp-motion{
-
     transform: translateX(0%);
+    opacity: 1;
 }
 
 
@@ -28,8 +33,7 @@ p{
         width: 70vw;
 
         p{
-            font-size: 2rem;
-        
+            font-size: 1.5rem;
         }
     }
 }

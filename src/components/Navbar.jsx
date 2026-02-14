@@ -3,6 +3,7 @@ import logoBlanco from "../assets/images/logoWhite.png";
 import logoColor from "../assets/images/zmdevsCortoGradiente.png";
 import { ArgentinaFlag, USAFlag } from "../assets/svg/flags";
 import { LanguageContext } from "../context/languageContext";
+import { useTranslation } from "../hooks/useTranslation";
 
 function Navbar({ scrollHandler, itemsNavbar }) {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -16,6 +17,7 @@ function Navbar({ scrollHandler, itemsNavbar }) {
   }, []);
 
   const { language, toggleLanguage } = useContext(LanguageContext);
+  const { t } = useTranslation();
 
   return (
     <nav
@@ -45,7 +47,7 @@ function Navbar({ scrollHandler, itemsNavbar }) {
                 }}
                 key={i}
               >
-                {language === "spanish" ? item.nameSpanish : item.nameEnglish}
+                {t(item.nameKey)}
               </li>
             );
           })}

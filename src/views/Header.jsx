@@ -1,38 +1,18 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { headerImages } from "../assets/header/headerInfo";
 import logoHeader from "../assets/images/logoHeader.png";
-import { LanguageContext } from "../context";
+import { useTranslation } from "../hooks/useTranslation";
 
 const services = ["Landing Page", "Mobile Apps", "Web Apps", "UX/UI Design"];
-const slogans = [
-  {
-    titulo: "HACÉ CRECER", // Key en español
-    subtitulo: "TU NEGOCIO", // Key en español
-    title: "GROW", // Key en inglés
-    secondaryTitle: "YOUR BUSINESS", // Key en inglés
-  },
-  {
-    titulo: "DESARROLLA LA APP", // Key en español
-    subtitulo: "QUE NECESITAS", // Key en español
-    title: "DEVELOP THE APP", // Key en inglés
-    secondaryTitle: "YOU NEED", // Key en inglés
-  },
-  {
-    titulo: "POSICIONATE", // Key en español
-    subtitulo: "EN LA WEB", // Key en español
-    title: "POSITION YOURSELF", // Key en inglés
-    secondaryTitle: "ON THE WEB", // Key en inglés
-  },
-  {
-    titulo: "AUTOMATIZACIÓN", // Key en español
-    subtitulo: "DE PROCESOS", // Key en español
-    title: "PROCESS", // Key en inglés
-    secondaryTitle: "AUTOMATION", // Key en inglés
-  },
+const sloganKeys = [
+  { title: "header.slogan1.title", subtitle: "header.slogan1.subtitle" },
+  { title: "header.slogan2.title", subtitle: "header.slogan2.subtitle" },
+  { title: "header.slogan3.title", subtitle: "header.slogan3.subtitle" },
+  { title: "header.slogan4.title", subtitle: "header.slogan4.subtitle" },
 ];
 
 function Header({ refHeader, windowSize }) {
-  const { language } = useContext(LanguageContext);
+  const { t } = useTranslation();
 
   const [index, setIndex] = useState(0);
 
@@ -58,21 +38,15 @@ function Header({ refHeader, windowSize }) {
           />
         ))}
 
-        {slogans.map((item, i) => (
+        {sloganKeys.map((item, i) => (
           <div
             key={i}
             className={`header-slogan-container ${
               index === i ? "active" : "exiting"
             }`}
           >
-            <h1>
-              {language === "spanish" ? `${item.titulo}` : `${item.title}`}
-            </h1>
-            <h2>
-              {language === "spanish"
-                ? `${item.subtitulo}`
-                : `${item.secondaryTitle}`}
-            </h2>
+            <h1>{t(item.title)}</h1>
+            <h2>{t(item.subtitle)}</h2>
             <figure>
               <img src={logoHeader} alt="logo" />
             </figure>

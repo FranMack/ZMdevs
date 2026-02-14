@@ -1,14 +1,13 @@
-import { useContext } from "react";
 import { infoClientes } from "../assets/clientes/infoClientes";
-import { LanguageContext } from "../context";
+import { useTranslation } from "../hooks/useTranslation";
 
 function Clients({ refClients }) {
-  const { language } = useContext(LanguageContext);
+  const { t } = useTranslation();
   return (
     <>
       <section ref={refClients} className="clients-container ">
         <h3 className="clients-section-title">
-          {language === "spanish" ? "Confián en nosotros" : "Our Clients"}
+          {t("clients.title")}
         </h3>
 
         <div className="clients-center-container ">

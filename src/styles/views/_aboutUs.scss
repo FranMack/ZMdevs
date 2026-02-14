@@ -1,9 +1,9 @@
 .aboutUs-container {
   width: 100vw;
-  min-height: 100vh;
+  min-height: auto;
   background-color: $background_color2;
   color: $cfDev_textTertiaryColor;
-  padding-top: 10vh;
+  padding-top: 0;
   padding-bottom: 2%;
 
   h3 {
@@ -28,7 +28,7 @@
 
   article {
     color: $background_color4;
-    padding: 1%;
+    padding: 1% 1% 1% 0;
     h4 {
       font-size: 2.2rem;
       font-weight: 600;
@@ -45,13 +45,11 @@
   .aboutUs-container {
     h3 {
       font-family: $cfDev_primaryFont;
-      color: $cfDev_textSecondaryColor;
       font-size: 3.2rem;
       font-weight: 600;
-      margin: 0 ;
+      margin-left: 10%;
       margin-bottom: 2vh;
       color: $cfDev_textPrimaryColor;
-      text-align: center;
     }
 
     .aboutUs-center-container {
@@ -60,7 +58,7 @@
       width: 80%;
       height: 80%;
       grid-template-columns: 1fr; /* Dos columnas de igual ancho */
-      gap: 15px; /* Espaciado entre los elementos */
+      gap: 40px;
     }
 
     article {

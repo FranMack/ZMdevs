@@ -1,12 +1,11 @@
 import { useEffect, useState,useRef } from "react";
 import { infoCarrusel } from "../assets/carrusel/info.carrusel";
 import { circleArrows } from "../assets/icons/icons";
-import { useContext } from "react";
-import { LanguageContext } from "../context";
+import { useTranslation } from "../hooks/useTranslation";
 
 function Carrusel({refHeader}) {
 
-  const { language } = useContext(LanguageContext);
+  const { t } = useTranslation();
 
   const listRef = useRef();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -15,10 +14,7 @@ function Carrusel({refHeader}) {
   const [carruselBottomPosition,setCarruselBottomPosition]=useState(0)
 
 
-  
 
-
-  
 
   useEffect(() => {
     const handleScrollPosition = () => {
@@ -30,11 +26,11 @@ function Carrusel({refHeader}) {
 
 
   useEffect(() => {
-    
+
     const listNode = listRef.current;
     const imgNode = listNode.querySelectorAll("img")[currentIndex];
 
-    
+
 
 
     if (imgNode && scrollPosition<carruselBottomPosition && scrollPosition>carruselTopPosition ) {
@@ -48,10 +44,10 @@ function Carrusel({refHeader}) {
 
 
   const scrollToImage = (direction) => {
-  
+
     if (direction === 'prev') {
-   
-     
+
+
       setCurrentIndex(curr => {
         const isFirstSlide = currentIndex === 0;
         return isFirstSlide ? 0 : curr - 1;
@@ -69,7 +65,7 @@ function Carrusel({refHeader}) {
 
     const carrusel=document.querySelector(".carrusel-slider")
     const carruselTopPosition=carrusel.scrollHeight
-  
+
     const carruselBottomPosition=carrusel.scrollHeight+carrusel.clientHeight
     setCarruselTopPosition(carruselTopPosition);
     setCarruselBottomPosition(carruselBottomPosition)
@@ -80,7 +76,7 @@ function Carrusel({refHeader}) {
       const initialSlide = 0;
       const finalSlide = infoCarrusel.length - 1;
 
-      
+
       if ( scrollPosition<carruselBottomPosition && scrollPosition>carruselTopPosition ){
       setCurrentIndex(curr => {
         if (curr < finalSlide) {
@@ -93,14 +89,10 @@ function Carrusel({refHeader}) {
 
 
     }, 4000);
-  
+
     // Devuelve una función de limpieza para limpiar el intervalo cuando el componente se desmonte o cuando el estado cambie
     return () => clearInterval(intervalId);
   }, [scrollPosition]);
-
-
-
-
 
 
 
@@ -110,18 +102,18 @@ function Carrusel({refHeader}) {
 
       <div className="arrows-left-container" onClick={() => scrollToImage('prev')}>{circleArrows.left}</div>
       <div className="arrows-right-container" onClick={() => scrollToImage('next')}>{circleArrows.right}</div>
-     
+
       <div className="carrusel-slider" ref={listRef}>
         {infoCarrusel.map((data,i)=>{
           return( <div key={i} className="image-container" >
-          <img className="image-carrusel" src={data.image} alt={data.titleSpanish} />
+          <img className="image-carrusel" src={data.image} alt={t(data.titleKey)} />
           <div className="carrusel-center-container">
-        <h3>{language==="spanish" ? infoCarrusel[currentIndex].titleSpanish:infoCarrusel[currentIndex].titleEnglish}</h3>
-        
+        <h3>{t(infoCarrusel[currentIndex].titleKey)}</h3>
+
       </div>
          </div>)
         })}
-      
+
       </div>
 
       <div className="container-bullets">
@@ -134,7 +126,7 @@ function Carrusel({refHeader}) {
           );
         })}
       </div>
-     
+
     </section>
   );
 }

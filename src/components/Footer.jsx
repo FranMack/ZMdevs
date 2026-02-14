@@ -13,18 +13,20 @@ function Footer() {
       </div>
 
       <div className="footer-social-media">
-        <div className="footer-social-media-icons">
-          {socialMedia.map((media,i) => {
-            return  <Link to={media.link} target="_blank" key={i}>{media.icon}</Link>
-          })}
-        </div>
+        <div className="footer-social-media-content">
+          <div className="footer-social-media-icons">
+            {socialMedia.map((media,i) => {
+              return  <Link to={media.link} target="_blank" key={i}>{media.icon}</Link>
+            })}
+          </div>
 
-        <p
-          className="footer-text"
-          style={{
-            color: "#E0E1E3",
-          }}
-        >{`Copyright © ${year} ZMdevs. All Rights Reserved `}</p>
+          <p
+            className="footer-text"
+            style={{
+              color: "#E0E1E3",
+            }}
+          >{`Copyright © ${year} ZMdevs. All Rights Reserved `}</p>
+        </div>
       </div>
     </footer>
   );

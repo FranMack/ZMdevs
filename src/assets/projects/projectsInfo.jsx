@@ -29,7 +29,6 @@ import josefina1 from "./josefina/josefina1.webp"
 import josefina2 from "./josefina/josefina2.webp"
 import josefina3 from "./josefina/josefina3.webp"
 import josefina4 from "./josefina/josefina4.webp"
-import josefina5 from "./josefina/josefina5.webp"
 import sharepass1 from "./sharepass/sharepass1.webp"
 import sharepass2 from "./sharepass/sharepass2.webp"
 import sharepass3 from "./sharepass/sharepass3.webp"
@@ -42,34 +41,12 @@ import batterseaMobile2 from "./battersea/mobile/battersea2.webp"
 import batterseaMobile3 from "./battersea/mobile/battersea3.webp"
 
 export const projectsInfo=[
-    {name:"Lovelia",
-        type:"Web app",
-        image:loveliaImage,
-        link:"https://www.lovelia.me/",
-        carrousel:[lovelia0,lovelia1,lovelia2,lovelia3,lovelia4,lovelia5],
-        mobileCarrousel:[loveliaMobile1,loveliaMobile2,loveliaMobile3,loveliaMobile4]
-    },
     {name:"Josefina",
         type:"Mobile app",
         image:loveliaImage,
         link:"https://apps.apple.com/us/app/jossefina/id6670399420",
-        carrousel:[josefina1,josefina2,josefina3,josefina4,josefina5],
-        mobileCarrousel:[josefina1,josefina2,josefina3,josefina4,josefina5]
-    },
-    {name:"Nutriendo la Vida",
-        type:"Web app",
-        image:nutriendoLaVidaImage,
-        link:"https://www.nutriendolavida.fit/",
-        carrousel:[nutriendo1,nutriendo2,nutriendo3,nutriendo4,nutriendo5],
-        mobileCarrousel:[nutriendoMobile1,nutriendoMobile2,nutriendoMobile3,nutriendoMobile4]
-    },
-
-    {name:"Sharepass",
-        type:"Web & Mobile app",
-        image:sharepassImage,
-        link:"https://sharepass.com/",
-        carrousel:[sharepass1,sharepass2,sharepass3],
-        mobileCarrousel:[sharepass1,sharepass2,sharepass3],
+        carrousel:[josefina1,josefina2,josefina3,josefina4],
+        mobileCarrousel:[josefina1,josefina2,josefina3,josefina4]
     },
     {name:"Battersea House",
         type:"Landing Page",
@@ -77,5 +54,26 @@ export const projectsInfo=[
         link:"https://batterseahouse.co.uk/",
         carrousel:[battersea1,battersea2,battersea3],
         mobileCarrousel:[batterseaMobile1,batterseaMobile2,batterseaMobile3],
+    },
+    {name:"Lovelia",
+        type:"Web app",
+        image:loveliaImage,
+        link:"https://www.lovelia.me/",
+        carrousel:[lovelia0,lovelia1,lovelia2,lovelia3,lovelia4,lovelia5],
+        mobileCarrousel:[loveliaMobile1,loveliaMobile2,loveliaMobile3,loveliaMobile4]
+    },
+    {name:"Sharepass",
+        type:"Web & Mobile app",
+        image:sharepassImage,
+        link:"https://sharepass.com/",
+        carrousel:[sharepass1,sharepass2,sharepass3],
+        mobileCarrousel:[sharepass1,sharepass2,sharepass3],
+    },
+    {name:"Nutriendo la Vida",
+        type:"Web app",
+        image:nutriendoLaVidaImage,
+        link:"https://www.nutriendolavida.fit/",
+        carrousel:[nutriendo1,nutriendo2,nutriendo3,nutriendo4,nutriendo5],
+        mobileCarrousel:[nutriendoMobile1,nutriendoMobile2,nutriendoMobile3,nutriendoMobile4]
     },
 ]

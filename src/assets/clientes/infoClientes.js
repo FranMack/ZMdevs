@@ -1,12 +1,17 @@
-import imagenJosefina from "./Josefina.png";
-import imagenLovelia from "./lovelia.png";
+import imagenJosefina from "./Josefina.webp";
+import imagenLovelia from "./lovelia.webp";
 import imagenSharepass from "./sharepass.png";
-import imagenFortres from"./fortres.png";
+import imagenBattersea from "./battersea.webp";
+import imagenNutriendoLaVida from "./nutriendolavida.webp";
 
 export const infoClientes = [
   {
-    name: "Fortres",
-    image: imagenFortres,
+    name: "Josefina Mayorista",
+    image: imagenJosefina,
+  },
+  {
+    name: "Battersea House",
+    image: imagenBattersea,
   },
   {
     name: "Lovelia",
@@ -17,8 +22,7 @@ export const infoClientes = [
     image: imagenSharepass,
   },
   {
-    name: "Josefina Mayorista",
-    image: imagenJosefina,
+    name: "Nutriendo la Vida",
+    image: imagenNutriendoLaVida,
   },
-  
 ];

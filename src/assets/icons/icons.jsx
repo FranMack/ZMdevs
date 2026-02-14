@@ -17,19 +17,19 @@ export const socialMedia = [
   { icon: email, link: "mailto:carlos@zmdevs.com", text: "carlos@zmdevs.com" },
   {
     icon: phone,
-    link: "https://wa.me/5493425906598",
-    text: "+54-93425906598",
+    link: "https://wa.me/543425396479",
+    text: "+54-3425396479",
   },
   {
     icon: linkedin,
     link: "https://www.linkedin.com/in/czaburlin/",
     text: "zmdevs.linkedin",
   },
-  {
-    icon: instagram,
-    link: "https://www.instagram.com/zmdevs/",
-    text: "ZMDevs",
-  },
+  // {
+  //   icon: instagram,
+  //   link: "https://www.instagram.com/zmdevs/",
+  //   text: "ZMDevs",
+  // },
 ];
 
 const arrowLeft = <IoIosArrowBack />;

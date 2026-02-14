@@ -1,20 +1,18 @@
-import { useContext } from "react";
 import { servicesArray } from "../assets/our_services/info";
 import ServicesCard from "../components/ServicesCard";
-import { LanguageContext } from "../context";
+import { useTranslation } from "../hooks/useTranslation";
+
 function Services({ refServices }) {
-  const { language } = useContext(LanguageContext);
+  const { t } = useTranslation();
 
   return (
     <section ref={refServices} className="services-container">
       <h3 className="services-section-title">
-        {language === "spanish" ? "Servicios" : "Services"}
+        {t("services.title")}
       </h3>
 
       <p className="services-section-description">
-        {language === "spanish"
-          ? "Desarrollamos soluciones de software a medida, desde la conceptualización y validación de ideas hasta la implementación de productos completos, adaptándonos a las necesidades específicas de cada cliente."
-          : "We develop custom software solutions, from conceptualization and idea validation to the implementation of complete products, tailored to meet each client's specific needs."}
+        {t("services.description")}
       </p>
 
       <div className="services-center-container">
@@ -22,16 +20,8 @@ function Services({ refServices }) {
           return (
             <ServicesCard
               key={i}
-              title={
-                language === "spanish"
-                  ? service.titleSpanish
-                  : service.titleEnglish
-              }
-              description={
-                language === "spanish"
-                  ? service.descriptionSpanish
-                  : service.descriptionEnglish
-              }
+              title={t(service.titleKey)}
+              description={t(service.descriptionKey)}
               image={service.image}
             />
           );
