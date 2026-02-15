@@ -50,6 +50,25 @@
         object-fit: contain;
       }
     }
+
+    .header-cta {
+      margin-top: 2vh;
+      padding: 1.2rem 3rem;
+      background-color: $cfDev_primaryColor;
+      color: $background_color3;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.8rem;
+      font-weight: 600;
+      font-family: $cfDev_primaryFont;
+      letter-spacing: 0.5px;
+      transition: opacity 0.3s ease;
+      z-index: 2;
+
+      &:hover {
+        opacity: 0.85;
+      }
+    }
   }
 
   .active {
@@ -107,6 +126,12 @@
       > figure {
         margin-top: 1vh;
         width: 50vw;
+      }
+
+      .header-cta {
+        margin-top: 2vh;
+        padding: 1rem 2.5rem;
+        font-size: 1.5rem;
       }
     }
   }

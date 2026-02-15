@@ -14,10 +14,13 @@ import Header from "./views/Header";
 import PrivacyPolicy from "./views/PrivacyPolicy";
 import Projects from "./views/Projects";
 import Services from "./views/Services";
+import TechStack from "./views/TechStack";
+import Stats from "./views/Stats";
 
 function HomePage({
   screenWidth,
   scrollHandler,
+  scrollToContact,
   itemsNavbar,
   handleShowMobileMenu,
   refMobileMenu,
@@ -56,15 +59,17 @@ function HomePage({
           handleWhatsApp={handleWhatsApp}
           openWhatsApp={openWhatsApp}
         />
-        <Header windowSize={screenWidth} refHeader={refHeader} />
+        <Header windowSize={screenWidth} refHeader={refHeader} scrollToContact={scrollToContact} />
         <Services refServices={refServices} />
-        <Clients refClients={refClients} />
-        <Projects refProjects={refProjects} />
         <AboutUs
           refAboutUs={refAboutUs}
           refAboutUsTitle={refAboutUsTitle}
           refAboutUsParagraph={refAboutUsParagraph}
         />
+        <Clients refClients={refClients} />
+        <Projects refProjects={refProjects} />
+        <TechStack />
+        <Stats />
         <Contact refContact={refContact} />
       </main>
       <Footer />
@@ -94,6 +99,10 @@ function App() {
       });
     }
     navigate("/");
+  };
+
+  const scrollToContact = () => {
+    scrollHandler(refContact);
   };
 
   const itemsNavbar = [
@@ -271,6 +280,7 @@ function App() {
           <HomePage
             screenWidth={screenWidth}
             scrollHandler={scrollHandler}
+            scrollToContact={scrollToContact}
             itemsNavbar={itemsNavbar}
             handleShowMobileMenu={handleShowMobileMenu}
             refMobileMenu={refMobileMenu}

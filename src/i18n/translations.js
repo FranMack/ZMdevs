@@ -17,6 +17,9 @@ export const translations = {
     "header.slogan4.title": "AUTOMATIZACIÓN",
     "header.slogan4.subtitle": "DE PROCESOS",
 
+    // Header CTA
+    "header.cta": "Empezá tu proyecto",
+
     // About Us
     "aboutUs.title": "Sobre Nosotros",
     "aboutUs.whoAreWe": "¿Quienes somos?",
@@ -76,6 +79,15 @@ export const translations = {
     "carousel.personalizedDesign": "Diseño personalizado",
     "carousel.optimization": "Optimización y mantenimiento",
 
+    // Tech Stack
+    "tech.title": "Tecnologías",
+
+    // Stats
+    "stats.projects": "Proyectos entregados",
+    "stats.countries": "Países",
+    "stats.years": "Años de experiencia",
+    "stats.clients": "Clientes satisfechos",
+
     // Privacy Policy
     "privacy.title": "Política de Privacidad",
     "privacy.lastUpdated": "Última actualización: Febrero 2026",
@@ -130,6 +142,9 @@ export const translations = {
     "header.slogan3.subtitle": "ON THE WEB",
     "header.slogan4.title": "PROCESS",
     "header.slogan4.subtitle": "AUTOMATION",
+
+    // Header CTA
+    "header.cta": "Start your project",
 
     // About Us
     "aboutUs.title": "About Us",
@@ -189,6 +204,15 @@ export const translations = {
     "carousel.technicalAdvice": "Technical advice",
     "carousel.personalizedDesign": "Personalized design",
     "carousel.optimization": "Optimization and maintenance",
+
+    // Tech Stack
+    "tech.title": "Technologies",
+
+    // Stats
+    "stats.projects": "Projects delivered",
+    "stats.countries": "Countries",
+    "stats.years": "Years of experience",
+    "stats.clients": "Satisfied clients",
 
     // Privacy Policy
     "privacy.title": "Privacy Policy",

@@ -11,7 +11,7 @@ const sloganKeys = [
   { title: "header.slogan4.title", subtitle: "header.slogan4.subtitle" },
 ];
 
-function Header({ refHeader, windowSize }) {
+function Header({ refHeader, windowSize, scrollToContact }) {
   const { t } = useTranslation();
 
   const [index, setIndex] = useState(0);
@@ -50,6 +50,9 @@ function Header({ refHeader, windowSize }) {
             <figure>
               <img src={logoHeader} alt="logo" />
             </figure>
+            <button className="header-cta" onClick={scrollToContact}>
+              {t("header.cta")}
+            </button>
           </div>
         ))}
       </figure>

@@ -15,6 +15,8 @@ function Clients({ refClients }) {
             return (
               <div className="client-card" key={i}>
                 <img src={client.image} alt={client.name} />
+                <p className="client-name">{client.name}</p>
+                <span className="client-info">{client.country} · {client.industry}</span>
               </div>
             );
           })}
