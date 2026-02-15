@@ -58,6 +58,17 @@
     }
 }
 
+.footer-privacy-link{
+    color: #888;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+
+    &:hover{
+        color: $cfDev_primaryColor;
+    }
+}
+
 
 @media screen and (max-width:678px) {
 
@@ -97,6 +108,10 @@
             height: 22px;
             width: 22px;
         }
+    }
+
+    .footer-privacy-link{
+        font-size: 1.2rem;
     }
 
 }

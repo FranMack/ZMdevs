@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Footer from "./components/Footer";
 import MobileMenu from "./components/MobileMenu";
 import MobileNavbar from "./components/MobileNavbar";
@@ -11,8 +11,66 @@ import { AboutUs } from "./views/AboutUs";
 import Clients from "./views/Clients";
 import Contact from "./views/Contact";
 import Header from "./views/Header";
+import PrivacyPolicy from "./views/PrivacyPolicy";
 import Projects from "./views/Projects";
 import Services from "./views/Services";
+
+function HomePage({
+  screenWidth,
+  scrollHandler,
+  itemsNavbar,
+  handleShowMobileMenu,
+  refMobileMenu,
+  openWhatsApp,
+  handleWhatsApp,
+  refHeader,
+  refServices,
+  refClients,
+  refProjects,
+  refAboutUs,
+  refAboutUsTitle,
+  refAboutUsParagraph,
+  refContact,
+}) {
+  return (
+    <>
+      {screenWidth > 768 ? (
+        <Navbar scrollHandler={scrollHandler} itemsNavbar={itemsNavbar} />
+      ) : (
+        <MobileNavbar handleShowMobileMenu={handleShowMobileMenu} />
+      )}
+      <MobileMenu
+        refMobileMenu={refMobileMenu}
+        scrollHandler={scrollHandler}
+        itemsNavbar={itemsNavbar}
+        handleShowMobileMenu={handleShowMobileMenu}
+      />
+      <main>
+        {!openWhatsApp && (
+          <WhatsAppButton
+            handleWhatsApp={handleWhatsApp}
+            openWhatsApp={openWhatsApp}
+          />
+        )}
+        <WhatsAppContacts
+          handleWhatsApp={handleWhatsApp}
+          openWhatsApp={openWhatsApp}
+        />
+        <Header windowSize={screenWidth} refHeader={refHeader} />
+        <Services refServices={refServices} />
+        <Clients refClients={refClients} />
+        <Projects refProjects={refProjects} />
+        <AboutUs
+          refAboutUs={refAboutUs}
+          refAboutUsTitle={refAboutUsTitle}
+          refAboutUsParagraph={refAboutUsParagraph}
+        />
+        <Contact refContact={refContact} />
+      </main>
+      <Footer />
+    </>
+  );
+}
 
 function App() {
   const navigate = useNavigate();
@@ -206,42 +264,39 @@ function App() {
   };
 
   return (
-    <>
-      {screenWidth > 768 ? (
-        <Navbar scrollHandler={scrollHandler} itemsNavbar={itemsNavbar} />
-      ) : (
-        <MobileNavbar handleShowMobileMenu={handleShowMobileMenu} />
-      )}
-      <MobileMenu
-        refMobileMenu={refMobileMenu}
-        scrollHandler={scrollHandler}
-        itemsNavbar={itemsNavbar}
-        handleShowMobileMenu={handleShowMobileMenu}
-      />
-      <main>
-        {!openWhatsApp && (
-          <WhatsAppButton
-            handleWhatsApp={handleWhatsApp}
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <HomePage
+            screenWidth={screenWidth}
+            scrollHandler={scrollHandler}
+            itemsNavbar={itemsNavbar}
+            handleShowMobileMenu={handleShowMobileMenu}
+            refMobileMenu={refMobileMenu}
             openWhatsApp={openWhatsApp}
+            handleWhatsApp={handleWhatsApp}
+            refHeader={refHeader}
+            refServices={refServices}
+            refClients={refClients}
+            refProjects={refProjects}
+            refAboutUs={refAboutUs}
+            refAboutUsTitle={refAboutUsTitle}
+            refAboutUsParagraph={refAboutUsParagraph}
+            refContact={refContact}
           />
-        )}
-        <WhatsAppContacts
-          handleWhatsApp={handleWhatsApp}
-          openWhatsApp={openWhatsApp}
-        />
-        <Header windowSize={screenWidth} refHeader={refHeader} />
-        <Services refServices={refServices} />
-        <Clients refClients={refClients} />
-        <Projects refProjects={refProjects} />
-        <AboutUs
-          refAboutUs={refAboutUs}
-          refAboutUsTitle={refAboutUsTitle}
-          refAboutUsParagraph={refAboutUsParagraph}
-        />
-        <Contact refContact={refContact} />
-      </main>
-      <Footer />
-    </>
+        }
+      />
+      <Route
+        path="/privacy"
+        element={
+          <>
+            <PrivacyPolicy />
+            <Footer />
+          </>
+        }
+      />
+    </Routes>
   );
 }
 

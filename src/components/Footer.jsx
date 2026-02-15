@@ -1,10 +1,12 @@
 import logo from "../assets/images/zmDevsGradiente.png";
 import { socialMedia } from "../assets/icons/icons";
 import { Link } from "react-router-dom";
+import { useTranslation } from "../hooks/useTranslation";
 
 function Footer() {
   const date = new Date();
   const year = date.getFullYear();
+  const { t } = useTranslation();
 
   return (
     <footer className="footer">
@@ -26,6 +28,10 @@ function Footer() {
               color: "#E0E1E3",
             }}
           >{`Copyright © ${year} ZMdevs. All Rights Reserved `}</p>
+
+          <Link to="/privacy" className="footer-privacy-link">
+            {t("footer.privacyPolicy")}
+          </Link>
         </div>
       </div>
     </footer>
