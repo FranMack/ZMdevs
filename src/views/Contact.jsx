@@ -98,6 +98,7 @@ function Contact({ refContact }) {
             <input
               type="text"
               id="name"
+              autoComplete="name"
               className={`${
                 signUpForm.errors.name &&
                 signUpForm.touched.name &&
@@ -136,8 +137,9 @@ function Contact({ refContact }) {
             </p>
             <label htmlFor="email">EMAIL</label>
             <input
-              type="text"
+              type="email"
               id="email"
+              autoComplete="email"
               className={`${
                 signUpForm.errors.email &&
                 signUpForm.touched.email &&
@@ -158,7 +160,7 @@ function Contact({ refContact }) {
             </label>
             <textarea
               name="message"
-              id=""
+              id="message"
               cols="30"
               rows="10"
               className={`${
